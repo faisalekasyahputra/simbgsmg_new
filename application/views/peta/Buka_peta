@@ -1,0 +1,26 @@
+<?php
+class Buka_peta extends CI_Model
+{
+    public function frd($tablename, $args,$field)
+    {
+        if ($args != NULL)
+        {
+            $this->db->where([$field => $args]);
+            $query = $this->db->get($tablename);
+        }
+        else
+        {
+            $query = $this->db->get($tablename);
+        }
+
+        if ($query->num_rows() > 0)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
+}
+?>
