@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg shadow-sm fixed-top glass">
+<nav id="navtick" class="navbar navbar-expand-lg shadow-sm glass" style="z-index: 1;">
         <div class="container">
             <a class="navbar-brand" href="<?=base_url('index.php')?>">
                 <img src="<?=base_url('assets/img/logo.png')?>" alt="logo-pupr" width="150px">

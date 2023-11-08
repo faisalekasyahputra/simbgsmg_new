@@ -309,5 +309,16 @@ class Welcome extends CI_Controller
 			}
 		}
 	}
+
+// Detail Data --------------------------------------------------------------------------------------
+
+	public function data_opd()
+	{
+		$datacontent['title'] = "Detail Data OPD";
+		$data['content'] = $this->load->view('pemerintah/data', $datacontent,TRUE);
+		$this->load->view('index',$data);
+	}
+
+	
 }
 

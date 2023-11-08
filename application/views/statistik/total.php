@@ -1,7 +1,7 @@
-<section id="section-1" class="hero-section bintang">
+<section id="section-1" class="hero-section bintang" style="background-image: url(<?= base_url('/assets/img/star.svg') ?>);">
     <div class="container-fluid">
-        <div class="container pt-5 h-100 d-flex flex-column justify-content-start" style="min-height: 100vh; ">
-            <div class="row pt-5">
+        <div class="container pt-5 h-100 d-flex flex-column justify-content-start" style="min-height: calc(100vh - 100px); ">
+            <div class="row">
                 <div class="col text-center">
                     <h1 class="display-6  fw-bolder judul">
                         <i class="fa fa-bar-chart me-2" aria-hidden="true"></i> </i>Statistik

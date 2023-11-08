@@ -1,6 +1,6 @@
 <section id="section-1" class="hero-section bintang" style="background-image: url(<?= base_url('/assets/img/star.svg') ?>);">
-    <div class="container-fluid pt-5">
-        <div class="container h-100 pt-5 d-flex align-items-top justify-content-center" style="min-height: 100vh; ">
+    <div class="container-fluid ">
+        <div class="container h-100 pt-5 d-flex align-items-top justify-content-center" style="min-height: calc(100vh - 100px);">
             <div class="row justify-content-center">
                 <div class="col d-flex flex-column align-items-center ">
                     <div class="row">

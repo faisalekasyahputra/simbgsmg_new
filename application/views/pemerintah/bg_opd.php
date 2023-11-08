@@ -1,6 +1,6 @@
 <section id="section-1" class="hero-section bintang" style="background-image: url(<?= base_url('/assets/img/star.svg') ?>);">
-    <div class="container-fluid pt-5">
-        <div class="container h-100 pt-5 d-flex align-items-top justify-content-center" style="min-height: 100vh; ">
+    <div class="container-fluid ">
+        <div class="container-fluid pt-5 h-100 d-flex align-items-top justify-content-center" style="min-height: calc(100vh - 100px);">
             <div class="row justify-content-center">
                 <div class="col d-flex flex-column align-items-center ">
                     <div class="row">
@@ -52,9 +52,9 @@
                                         <td><?=$b->Nomor_IMB?></td>
                                         <td><?=$b->Status_Kepemilikan?></td>
                                         <td><?=$l?> m<sup>2</sup></td>
-                                        <td><button class="btn btn-primary d-flex align-items-center"><i class="fa fa-database me-2" aria-hidden="true"></i>
+                                        <td><a class="btn btn-primary d-flex align-items-center" href="<?=base_url('Welcome/data_opd')?>"><i class="fa fa-database me-2" aria-hidden="true"></i>
                                                 <p class="m-0"> Detail</p>
-                                            </button></td>
+                                            </a></td>
                                     </tr>
                                     <?php           
                                        $i++; }

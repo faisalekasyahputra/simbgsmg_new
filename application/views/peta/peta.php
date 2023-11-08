@@ -1,9 +1,8 @@
-<section id="section-3" class="py-5 bintang" style=" background-image: url(<?=base_url('/assets/img/star.svg')?>);">
-        <div class="container">
-         
+<section id="section-3" class="bintang" style=" background-image: url(<?=base_url('/assets/img/star.svg')?>); min-height: calc(100vh - 100px);"">
+        <div class="container-fluid">
             <br>
             <div class="col text-center">
-            <h1 class="h5 fw-bold mb-1"><?=$subtitle?></h1>
+            <h1 class="h5 fw-bold mb-3"><?=$subtitle?></h1>
             </div>
             <div class="row-cols-md-4 d-flex p-0">
                 <div class="col p-1">
@@ -58,7 +57,7 @@
             <div class="row">
                 <div class="col d-flex align-items-center justify-content-center img-thumbnail p-2 m-2">
                     
-                        <div id="map" class="rounded p-0 m-0"  style="width: 100%; height: 530px;"></div>
+                        <div id="map" class="rounded p-0 m-0"  style="width: 100%; height: calc(  100vh - 250px);"></div>
                 </div>
             </div>
         </div>
@@ -123,7 +122,7 @@
             var ico = icone1(feature.properties['<?=$Legenda[3]?>']);
         <?php } ?>    
         var Url_nya = "<?=base_url('assets/marker/')?>"+ico;
-        var Icon = L.icon({iconUrl:Url_nya,iconSize: [30, 30],});
+        var Icon = L.icon({iconUrl:Url_nya,iconSize: [30],});
         var marker = L.marker(latlng, {icon:Icon});
         return marker
     }
@@ -146,8 +145,8 @@
 } 
     var bangunan=L.geoJSON([<?=$bangunan?>], {onEachFeature:popup,pointToLayer:marker_nya,filter: function(feature, layer) {return feature.properties.show_on_map;}});
     var map = L.map('map', {
-      center: [-6.9912843, 110.4199096],
-      zoom: 13,
+      center: [-7.021114, 110.426165],
+      zoom: 12,
       fullscreenControl: true,
       fullscreenControlOptions: {
         position: 'topleft'
