@@ -1,7 +1,7 @@
 <section id="section-1" class="hero-section" 
         style="background-image: url(<?=base_url('assets/img/bg-depan.jpg')?>); background-size: cover;">
         <div class="container-fluid" style="background-image: url('assets/img/bgover.png'); background-size: cover;">
-            <div class="container h-100 d-flex align-items-center justify-content-end " style="min-height: 100vh; ">
+            <div class="container h-100 d-flex align-items-center justify-content-end " style="min-height:  calc(100vh - 100px ); ">
                 <div class="row justify-content-end">
                     <div class="col-6 d-flex flex-column align-items-end">
                         <h1 class="display-4 text-end fw-bolder judul"><i class="fa fa-building p-1 me-2" aria-hidden="true"></i> Sistem Informasi Manajemen
