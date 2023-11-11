@@ -325,7 +325,7 @@ class Welcome extends CI_Controller
 
 		$datacontent['title'] = "Detail Data OPD";
 		$datacontent['bangunan'] = $this->Buka_peta->frd('tb_bangunan', $id,'id');
-		$datacontent['detail'] = $this->Buka_peta->frd('tb_detail', $id,'id');
+
 		$data['content'] = $this->load->view('pemerintah/data', $datacontent, TRUE);
 		$this->load->view('index', $data);
 	}
