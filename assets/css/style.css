@@ -104,6 +104,18 @@
   transition: 500ms ease;
 }
 
+.dropdown-item:active{
+  border-radius: 10px;
+  transition: all 500ms ease;
+  background-color: #FAD605!important;
+
+}
+.dropdown-item{
+  padding: 10px 10px!important;
+  border-radius: 10px;
+  transition: all 500ms ease;
+}
+
 table th , table td ,table tr , .text-table{
  background-color: transparent!important;
 }

@@ -1,9 +1,9 @@
-<section id="section-1" class="hero-section bintang" style="background-image: url(<?= base_url('/assets/img/star.svg') ?>);">
-    <div class="container-fluid">
+<section id="section-1" class="hero-section bintang" style="background-image: url(<?= base_url('/assets/img/star.svg') ?>);" data-aos="fade-up" data-aos-offset="100" data-aos-delay="100" data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
+    <div class="container-fluid" >
         <div class="container-fluid py-5 d-flex align-items-top justify-content-center" style="min-height: 100vh">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" >
                 <div class="col d-flex flex-column align-items-center ">
-                    <div class="row">
+                    <div class="row" data-aos="fade-up" data-aos-offset="100" data-aos-delay="300" data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
                         <div class="col text-center">
                             <h1 class="display-6 fw-bolder judul">
                                 <i class="fa fa-database p-1 me-2" aria-hidden="true"></i> Data Bangunan Gedung 
@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col glass-nocolor border-top-cstm p-3 rounded-3">
+                        <div class="col glass-nocolor border-top-cstm p-3 rounded-3" data-aos="fade-up" data-aos-offset="100" data-aos-delay="400" data-aos-duration="600" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">
                             <table id="example" class="table table-bordered" style="width:90vw">
                                 <thead>
                                     <tr>

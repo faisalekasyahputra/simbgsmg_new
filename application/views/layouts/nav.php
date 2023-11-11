@@ -1,6 +1,6 @@
-<nav id="navtick" class="navbar navbar-expand-lg shadow-sm glass" style="z-index: 999;">
-        <div class="container">
-            <a class="navbar-brand" href="<?=base_url('index.php')?>">
+<nav id="navtick" class="navbar navbar-expand-lg shadow-sm glass" data-aos="fade-down" data-aos-offset="200" data-aos-delay="100" data-aos-duration="200" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center" style="z-index: 999;" >
+        <div class="container" data-aos="fade-down" data-aos-offset="100" data-aos-delay="100" data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center" >
+            <a class="navbar-brand" href="<?=base_url('welcome')?>">
                 <img src="<?=base_url('assets/img/logo.png')?>" alt="logo-pupr" width="150px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -18,7 +18,7 @@
                             <p class="m-0">Profil Kepemilikan</p> <i class="fa fa-sort-down ms-2 mb-2"
                                 aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu mt-4" id="myTab" role="tablist">
+                        <ul class="dropdown-menu mt-4 p-3" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="dropdown-item nav-link" href="<?=base_url('Welcome/kepemilikan')?>">Berdasarkan Kepemilikan IMB</a>
                             </li>
@@ -36,7 +36,7 @@
                             <p class="m-0">Garis Sepadan</p> <i class="fa fa-sort-down ms-2 mb-2"
                                 aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu mt-4" id="myTab" role="tablist">
+                        <ul class="dropdown-menu mt-4 p-3" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="dropdown-item nav-link" href="<?=base_url('index.php/Welcome/tsepadan/GS_Bangunan')?>">Bangunan</a>
                             </li>
@@ -76,7 +76,7 @@
                             <p class="m-0">Profil Bangunan</p> <i class="fa fa-sort-down ms-2 mb-2"
                                 aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu mt-4" id="myTab" role="tablist">
+                        <ul class="dropdown-menu mt-4 p-3" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="dropdown-item nav-link" href="<?=base_url('index.php/Welcome/profil_bangunan/1')?>">Diatas Drainase</a>
                             </li>
