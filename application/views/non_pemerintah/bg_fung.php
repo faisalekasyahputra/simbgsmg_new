@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col glass-nocolor p-3 rounded-3">
+                        <div class="col glass-nocolor border-top-cstm p-3 rounded-3">
                         <table id="example" class="table table-bordered" style="width:90vw">
                                 <thead>
                                     <tr>
