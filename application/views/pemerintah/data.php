@@ -530,7 +530,7 @@
                             <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm overflow-scroll" style="max-height: calc(100vh - 140px);">
                             <div class="row d-flex">
                                 <div class="col">
-                                    <table class="table">
+                                    <table class="table table-hover table-borderless overflow-hidden">
                                         <tbody>
                                             <?php if ($bangunan != NULL) {
 
@@ -699,7 +699,7 @@
                                     </table>
                                 </div>
                                 <div class="col">
-                                    <table>
+                                    <table class="table table-hover table-borderless overflow-hidden">
                                         <tbody>
                                             <tr>
                                                 <th scope="row" width="25%">Jarak Antar Masa Bangunan</th>
