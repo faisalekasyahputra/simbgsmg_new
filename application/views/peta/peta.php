@@ -28,7 +28,7 @@
                        
                       </select>
                 </div>
-                <div class="col p-1">
+                <div class="col p-1 ">
                     <select class="form-select slc3 p-2" name="state"  aria-label="Default select example">
                     <option value="<?=$pilihan[2]?>" selected><?=$pilihan[2]?></option>
                         <option value="Semua">Semua</option>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col d-flex align-items-center justify-content-center img-thumbnail p-2 m-2">
+                <div class="col d-flex align-items-center border-top-cstm justify-content-center img-thumbnail p-2 m-2">
                     
                         <div id="map" class="rounded p-0 m-0"  style="width: 100%; height: calc(  100vh - 250px);"></div>
                 </div>

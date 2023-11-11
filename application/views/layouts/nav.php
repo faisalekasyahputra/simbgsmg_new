@@ -20,11 +20,11 @@
                         </a>
                         <ul class="dropdown-menu mt-4" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="dropdown-item nav-link" href="<?=base_url('index.php/Welcome/kepemilikan')?>">Berdasarkan Kepemilikan IMB</a>
+                                <a class="dropdown-item nav-link" href="<?=base_url('Welcome/kepemilikan')?>">Berdasarkan Kepemilikan IMB</a>
                             </li>
                             
                             <li class="nav-item" role="presentation">
-                                <a class="dropdown-item nav-link" href="<?=base_url('index.php/Welcome/fung_pem')?>">Berdasarkan Fungsi</a>
+                                <a class="dropdown-item nav-link" href="<?=base_url('Welcome/fung_pem')?>">Berdasarkan Fungsi</a>
                             </li>
                             
                             

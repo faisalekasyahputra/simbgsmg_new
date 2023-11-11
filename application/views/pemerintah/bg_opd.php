@@ -1,6 +1,6 @@
 <section id="section-1" class="hero-section bintang" style="background-image: url(<?= base_url('/assets/img/star.svg') ?>);">
-    <div class="container-fluid ">
-        <div class="container-fluid py-5 h-100 d-flex align-items-top justify-content-center" style="min-height: calc(100vh - 100px);">
+    <div class="container-fluid">
+        <div class="container-fluid py-5 d-flex align-items-top justify-content-center" style="min-height: 100vh">
             <div class="row justify-content-center">
                 <div class="col d-flex flex-column align-items-center ">
                     <div class="row">
@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col glass-nocolor p-3 rounded-3">
+                        <div class="col glass-nocolor border-top-cstm p-3 rounded-3">
                             <table id="example" class="table table-bordered" style="width:90vw">
                                 <thead>
                                     <tr>
@@ -52,7 +52,7 @@
                                         <td><?=$b->Nomor_IMB?></td>
                                         <td><?=$b->Status_Kepemilikan?></td>
                                         <td><?=$l?> m<sup>2</sup></td>
-                                        <td><a class="btn btn-primary d-flex align-items-center" href="<?=base_url('Welcome/data_opd')?>"><i class="fa fa-database me-2" aria-hidden="true"></i>
+                                        <td><a class="btn btn-primary d-flex align-items-center" href="<?=base_url('Welcome/data_opd/'.$b->id )?>" target="_blank"><i class="fa fa-database me-2" aria-hidden="true"></i>
                                                 <p class="m-0"> Detail</p>
                                             </a></td>
                                     </tr>

@@ -28,7 +28,7 @@
 
                         </div>
                     </div>
-                    <div class="tab-content rounded-3 w-75  glass-nocolor p-3" id="myTabContent">
+                    <div class="tab-content rounded-3 w-75  glass-nocolor border-top-cstm p-3" id="myTabContent">
                         <div class="tab-pane fade show active " style="height: 500px;" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                             <canvas id="myChart1"></canvas>
                         </div>
