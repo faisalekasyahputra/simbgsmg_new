@@ -13,6 +13,23 @@ class Buka_peta extends CI_Model
             return FALSE;
         }
     }
+    public function delete_record($tablename, $arg,$field)
+    {
+        $db_debug = $this->db->db_debug;
+        $this->db->db_debug = FALSE;
+        $this->db->where([$field => $arg]);
+        $this->db->delete($tablename);
+        if ($this->db->affected_rows() > 0)
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+
+        $this->db->db_debug = $db_debug;
+    }
     public function frd($tablename, $args,$field)
     {
         if ($args != NULL)
@@ -34,7 +51,27 @@ class Buka_peta extends CI_Model
             return NULL;
         }
     }
+    public function frd_jml($tablename, $args,$field)
+    {
+        if ($args != NULL)
+        {
+            $this->db->where([$field => $args]);
+            $query = $this->db->get($tablename);
+        }
+        else
+        {
+            $query = $this->db->get($tablename);
+        }
 
+        if ($query->num_rows() > 0)
+        {
+            return $query->num_rows();
+        }
+        else
+        {
+            return NULL;
+        }
+    }
     public function titik_bangunan($tablename,$args,$field){
         $bangunan = $this->frd($tablename,$args,$field);
 		$bng = '';
@@ -122,6 +159,8 @@ class Buka_peta extends CI_Model
         $this->db->update($table_name, $data);
         return TRUE;
     } 
+
+    
     function tb_sepadan($att)
     {
         $this->db->select("tb_bangunan.Nama_Pemilik, 
@@ -161,6 +200,22 @@ class Buka_peta extends CI_Model
         {
             return NULL;
         } 
+    }
+    public function authenticate_user($Email, $password)
+    {
+   
+        $this->db->where('username =', $Email);
+        $this->db->where('password =', sha1($password));
+        
+        $query = $this->db->get('users');
+        if ($query->num_rows() > 0)
+        {
+            return $query->result();
+        }
+        else
+        {
+            return NULL;
+        }
     }
 }
 ?>
