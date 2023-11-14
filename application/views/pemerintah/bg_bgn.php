@@ -73,9 +73,9 @@
                                         <td><?=$b->Alamat?> Kel. <?=$b->Kelurahan?> Kec. <?=$b->Kecamatan?></td>
                                         <td><?=$hasil?></td>
                                         <td><?=$m?> m</td>
-                                        <td><button class="btn btn-primary d-flex align-items-center"><i class="fa fa-database me-2" aria-hidden="true"></i>
+                                        <td><a class="btn btn-primary d-flex align-items-center" href="<?=base_url('Welcome/data_opd/'.$b-> )?>" target="_blank"><i class="fa fa-database me-2" aria-hidden="true"></i>
                                                 <p class="m-0"> Detail</p>
-                                            </button></td>
+                                            </a></td>
                                     </tr>
                                     <?php           
                                        $i++; }

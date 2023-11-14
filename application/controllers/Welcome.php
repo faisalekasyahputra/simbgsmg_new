@@ -13,7 +13,7 @@ class Welcome extends CI_Controller
 	public function index()
 	{
 		$datacontent['title'] = "SIMBG Semarang";
-		$data['content'] = $this->load->view('main', $datacontent, TRUE);
+		$data['content'] = $this->load->view('utama', $datacontent, TRUE);
 		$this->load->view('index', $data);
 	}
 	public function peta()
