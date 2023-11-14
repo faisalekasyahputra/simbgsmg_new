@@ -122,6 +122,8 @@ class Buka_peta extends CI_Model
         $this->db->update($table_name, $data);
         return TRUE;
     } 
+
+    
     function tb_sepadan($att)
     {
         $this->db->select("tb_bangunan.Nama_Pemilik, 
