@@ -21,7 +21,7 @@
                     <div class="row d-flex  py-3 g-3 h-100">
                         <div class="col rounded-3">
 
-                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm bg-white">
+                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm bg-white overflow-scroll">
                                 <table class="table table-hover table-borderless overflow-hidden">
 
                                     <tbody>
@@ -304,7 +304,7 @@
                     <div class="row d-flex h-100 py-3 g-3">
                         <div class="col rounded-3">
 
-                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm">
+                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm overflow-scroll">
                                 <table class="table table-hover table-borderless overflow-hidden">
 
                                     <tbody>
