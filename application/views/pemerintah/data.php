@@ -6,10 +6,10 @@
 
                 <!-- NAV TABS    -->
                 <div class="nav flex-column nav-pills py-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link nav-link-tab active primary-color m-2 btn  glass text-start" id="vprofil-tab" data-bs-toggle="pill" data-bs-target="#profil-tab" type="button" role="tab" aria-controls="profil-tab" aria-selected="true"><i class="fa fa-home me-2" aria-hidden="true"></i> Profil Bangunan</a>
+                    <a class="nav-link nav-link-tab active primary-color m-2 btn  glass text-start" id="vprofil-tab" data-bs-toggle="pill" data-bs-target="#profil-tab" type="button" role="tab" aria-controls="profil-tab" aria-selected="true"><i class="fa fa-home me-2" aria-hidden="true"></i> Profil Kepemilikan</a>
+                    <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vteknis-tab" data-bs-toggle="pill" data-bs-target="#teknis-tab" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-gear me-2"></i> Profil Bangunan</a>
                     <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vpeta-tab" data-bs-toggle="pill" data-bs-target="#peta-tab" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa fa-map me-2" aria-hidden="true"></i> Peta Spasial</a>
-                    <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vklas-tab" data-bs-toggle="pill" data-bs-target="#klas-tab" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-columns me-2" aria-hidden="true"></i> Klasifikasi</a>
-                    <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vteknis-tab" data-bs-toggle="pill" data-bs-target="#teknis-tab" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-gear me-2"></i> Pendataan Teknis</a>
+                    <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vklas-tab" data-bs-toggle="pill" data-bs-target="#klas-tab" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-columns me-2" aria-hidden="true"></i> Garis Sepadan</a>
                 </div>
 
 
@@ -26,52 +26,56 @@
 
                                     <tbody>
                                         <?php if ($bangunan != NULL) {
-
-                                            foreach ($bangunan as $b) {
-                                                if ($b->Memiliki_IMB == '1') {
-                                                    $mem = 'Memiliki';
-                                                } else {
-                                                    $mem = 'Tidak Memiliki';
-                                                }
-                                                $luas_lahan = $this->Buka_peta->frd('tb_lain', $b->id, 'id_bangunan');
-
-                                                if ($luas_lahan != NULL) {
-
-                                                    foreach ($luas_lahan as $ln) {
-                                                        if ($l = $ln->Luas_Lahan) {
-                                                        } else {
-                                                            $l = 0;
-                                                        }
-                                                    }
-                                                }
-
-                                        ?>
-                                        <?php }
+                                            $nama_pemilik = $bangunan[0]->Nama_Pemilik;
+                                            if ($bangunan[0]->Memiliki_IMB == '1') {
+                                                $mem = 'Memiliki';
+                                            } else {
+                                                $mem = 'Tidak Memiliki';
+                                            }
+                                            if ($l = $lain[0]->Luas_Lahan) {
+                                            } else {
+                                                $l = 0;
+                                            }
+                                            if ($lain[0]->Kesesuaian_e_RTH == '1') {
+                                                $rth = 'Sesuai';
+                                            } else {
+                                                $rth = 'Tidak Sesuai';
+                                            }
+                                            // if ($lain[0]->Kesesuaian_Jarak_Bangunan_m == '1') {
+                                            //     $ksj = 'Sesuai';
+                                            // } else {
+                                            //     $ksj = 'Tidak Sesuai';
+                                            // }
+                                            if ($sepadan[0]->antar_masa == '1') {
+                                                $mss = 'Sesuai';
+                                            } else {
+                                                $mss = 'Tidak Sesuai';
+                                            }
                                         } ?>
 
 
                                         <tr>
                                             <th scope="row" width="40%">Nama Pemilik</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Nama_Pemilik ?></td>
+                                            <td><?= $nama_pemilik ?></td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Alamat</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Alamat ?>, <?= $b->Kelurahan ?> ,<?= $b->Kecamatan ?> </td>
+                                            <td><?= $bangunan[0]->Alamat ?>, <?= $bangunan[0]->Kelurahan ?> ,<?= $bangunan[0]->Kecamatan ?> </td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Kelurahan</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Kelurahan ?> </td>
+                                            <td><?= $bangunan[0]->Kelurahan ?> </td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Kecamatan</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Kecamatan ?> </td>
+                                            <td><?= $bangunan[0]->Kecamatan ?> </td>
 
                                         </tr>
 
@@ -83,43 +87,43 @@
                                         <tr>
                                             <th scope="row" width="40%">Nomor IMB</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Nomor_IMB ?></td>
+                                            <td><?= $bangunan[0]->Nomor_IMB ?></td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Status Kepemilikan</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Status_Kepemilikan ?></td>
+                                            <td><?= $bangunan[0]->Status_Kepemilikan ?></td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Fungsi</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Fungsi ?></td>
+                                            <td><?= $bangunan[0]->Fungsi ?></td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Luas Lahan</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $l ?> m<sup>2</sup></td>
+                                            <td><?= $lain[0]->Luas_Lahan ?> m<sup>2</sup></td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Jumlah Lantai</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $ln->Jumlah_Lantai ?></td>
+                                            <td><?= $lain[0]->Jumlah_Lantai ?></td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Ketinggian</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $ln->Ketinggian ?> m<sup>2</sup></td>
+                                            <td><?= $lain[0]->Ketinggian ?> m<sup>2</sup></td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Koordinat</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Lat ?> <sup>o</sup> , <?= $b->Lng ?> <sup>o</sup> </td>
+                                            <td><?= $bangunan[0]->Lat ?> <sup>o</sup> , <?= $bangunan[0]->Lng ?> <sup>o</sup> </td>
 
                                         </tr>
 
@@ -145,11 +149,14 @@
                                 <div class="card-body">
                                     <div class="row flex-column p-3 g-4">
                                         <div class="col">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
 
                                         </div>
                                         <div class="col">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
+                                        </div>
+                                        <div class="col">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
                                         </div>
 
                                     </div>
@@ -182,64 +189,40 @@
                                 <div class="card-body">
                                     <div class="row g-4 pb-3">
                                         <div class="col-md-6 ">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
 
                                         </div>
                                         <div class="col-md-6 ">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
                                         </div>
 
                                     </div>
                                     <table class="table table-borderless overflow-hidden rounded text-table" style="font-size: 12px; color:aliceblue;">
 
                                         <tbody class="glass">
-                                            <?php if ($bangunan != NULL) {
-
-                                                foreach ($bangunan as $b) {
-                                                    if ($b->Memiliki_IMB == '1') {
-                                                        $mem = 'Memiliki';
-                                                    } else {
-                                                        $mem = 'Tidak Memiliki';
-                                                    }
-                                                    $luas_lahan = $this->Buka_peta->frd('tb_lain', $b->id, 'id_bangunan');
-
-                                                    if ($luas_lahan != NULL) {
-
-                                                        foreach ($luas_lahan as $ln) {
-                                                            if ($l = $ln->Luas_Lahan) {
-                                                            } else {
-                                                                $l = 0;
-                                                            }
-                                                        }
-                                                    }
-
-                                            ?>
-                                            <?php }
-                                            } ?>
-
 
                                             <tr>
                                                 <th scope="row" width="40%">Nama Pemilik</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Nama_Pemilik ?></td>
+                                                <td><?= $bangunan[0]->Nama_Pemilik ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Alamat</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Alamat ?>, <?= $b->Kelurahan ?> ,<?= $b->Kecamatan ?> </td>
+                                                <td><?= $bangunan[0]->Alamat ?>, <?= $bangunan[0]->Kelurahan ?> ,<?= $bangunan[0]->Kecamatan ?> </td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Kelurahan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Kelurahan ?> </td>
+                                                <td><?= $bangunan[0]->Kelurahan ?> </td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Kecamatan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Kecamatan ?> </td>
+                                                <td><?= $bangunan[0]->Kecamatan ?> </td>
 
                                             </tr>
 
@@ -251,19 +234,19 @@
                                             <tr>
                                                 <th scope="row" width="40%">Nomor IMB</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Nomor_IMB ?></td>
+                                                <td><?= $bangunan[0]->Nomor_IMB ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Status Kepemilikan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Status_Kepemilikan ?></td>
+                                                <td><?= $bangunan[0]->Status_Kepemilikan ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Fungsi</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Fungsi ?></td>
+                                                <td><?= $bangunan[0]->Fungsi ?></td>
 
                                             </tr>
                                             <tr>
@@ -275,13 +258,13 @@
                                             <tr>
                                                 <th scope="row" width="40%">Jumlah Lantai</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $ln->Jumlah_Lantai ?></td>
+                                                <td><?= $lain[0]->Jumlah_Lantai ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Ketinggian</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $ln->Ketinggian ?> m<sup>2</sup></td>
+                                                <td><?= $lain[0]->Ketinggian ?> m<sup>2</sup></td>
 
                                             </tr>
 
@@ -308,78 +291,73 @@
                                 <table class="table table-hover table-borderless overflow-hidden">
 
                                     <tbody>
-                                        <?php if ($bangunan != NULL) {
-
-                                            foreach ($bangunan as $b) {
-                                                if ($b->Memiliki_IMB == '1') {
-                                                    $mem = 'Memiliki';
-                                                } else {
-                                                    $mem = 'Tidak Memiliki';
-                                                }
-                                                $luas_lahan = $this->Buka_peta->frd('tb_lain', $b->id, 'id_bangunan');
-
-                                                if ($luas_lahan != NULL) {
-
-                                                    foreach ($luas_lahan as $ln) {
-                                                        if ($l = $ln->Luas_Lahan) {
-                                                        } else {
-                                                            $l = 0;
-                                                        }
-                                                    }
-                                                }
-
-                                        ?>
-                                        <?php }
-                                        } ?>
-
-
                                         <tr>
-                                            <th scope="row" width="40%">Fungsi Bangunan</th>
+                                            <th scope="row" width="40%">Jarak GS Bangunan</th>
                                             <td style="width:2%">:</td>
-                                            <td><?= $b->Fungsi ?></td>
-
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> .... m</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row" width="40%">Tingkat Kompleksitas</th>
+                                            <th scope="row" width="40%">Jarak GS Pantai</th>
                                             <td style="width:2%">:</td>
-                                            <td> </td>
-
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> .... m</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row" width="40%">Tingkat Permanensi</th>
+                                            <th scope="row" width="40%">Jarak GS Sungai </th>
                                             <td style="width:2%">:</td>
-                                            <td> </td>
-
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> .... m</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row" width="40%">Tingkat Resiko Kebakaran</th>
+                                            <th scope="row" width="40%">Jarak GS Waduk</th>
                                             <td style="width:2%">:</td>
-                                            <td> </td>
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> .... m</td>
 
                                         </tr>
 
                                         <tr>
-                                            <th scope="row" width="40%">Zonasi Gempa</th>
+                                            <th scope="row" width="40%">Jarak GS Danau</th>
                                             <td style="width:2%">:</td>
-                                            <td></td>
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> .... m</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row" width="40%">Lokasi</th>
+                                            <th scope="row" width="40%">Jarak GS Rel Kereta </th>
                                             <td style="width:2%">:</td>
-                                            <td></td>
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> .... m</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" width="40%">Jarak GS Jaringan Listrik SUTET</th>
+                                            <td style="width:2%">:</td>
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> .... m</td>
 
                                         </tr>
                                         <tr>
-                                            <th scope="row" width="40%">Ketinggian</th>
+                                            <th scope="row" width="40%">Jarak GS Mata Air
+                                            </th>
                                             <td style="width:2%">:</td>
-                                            <td></td>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="row" width="40%">Kepemilikan</th>
+                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> <?= $b->Status_Kepemilikan ?></td>
-
+                                            <td> .... m</td>
                                         </tr>
 
 
@@ -405,64 +383,40 @@
                                 <div class="card-body">
                                     <div class="row g-4 pb-3">
                                         <div class="col-md-6 ">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
 
                                         </div>
                                         <div class="col-md-6 ">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
                                         </div>
 
                                     </div>
                                     <table class="table table-hover table-borderless overflow-hidden " style="font-size: 12px;">
 
                                         <tbody>
-                                            <?php if ($bangunan != NULL) {
-
-                                                foreach ($bangunan as $b) {
-                                                    if ($b->Memiliki_IMB == '1') {
-                                                        $mem = 'Memiliki';
-                                                    } else {
-                                                        $mem = 'Tidak Memiliki';
-                                                    }
-                                                    $luas_lahan = $this->Buka_peta->frd('tb_lain', $b->id, 'id_bangunan');
-
-                                                    if ($luas_lahan != NULL) {
-
-                                                        foreach ($luas_lahan as $ln) {
-                                                            if ($l = $ln->Luas_Lahan) {
-                                                            } else {
-                                                                $l = 0;
-                                                            }
-                                                        }
-                                                    }
-
-                                            ?>
-                                            <?php }
-                                            } ?>
-
-
+                                            
                                             <tr>
                                                 <th scope="row" width="40%">Nama Pemilik</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Nama_Pemilik ?></td>
+                                                <td><?= $bangunan[0]->Nama_Pemilik ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Alamat</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Alamat ?>, <?= $b->Kelurahan ?> ,<?= $b->Kecamatan ?> </td>
+                                                <td><?= $bangunan[0]->Alamat ?>, <?= $bangunan[0]->Kelurahan ?> ,<?= $bangunan[0]->Kecamatan ?> </td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Kelurahan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Kelurahan ?> </td>
+                                                <td><?= $bangunan[0]->Kelurahan ?> </td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Kecamatan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Kecamatan ?> </td>
+                                                <td><?= $bangunan[0]->Kecamatan ?> </td>
 
                                             </tr>
 
@@ -474,19 +428,19 @@
                                             <tr>
                                                 <th scope="row" width="40%">Nomor IMB</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Nomor_IMB ?></td>
+                                                <td><?= $bangunan[0]->Nomor_IMB ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Status Kepemilikan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Status_Kepemilikan ?></td>
+                                                <td><?= $bangunan[0]->Status_Kepemilikan ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Fungsi</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Fungsi ?></td>
+                                                <td><?= $bangunan[0]->Fungsi ?></td>
 
                                             </tr>
                                             <tr>
@@ -498,13 +452,13 @@
                                             <tr>
                                                 <th scope="row" width="40%">Jumlah Lantai</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $ln->Jumlah_Lantai ?></td>
+                                                <td><?= $lain[0]->Jumlah_Lantai ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Ketinggian</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $ln->Ketinggian ?> m<sup>2</sup></td>
+                                                <td><?= $lain[0]->Ketinggian ?> m<sup>2</sup></td>
 
                                             </tr>
 
@@ -527,280 +481,233 @@
                     <div class="row d-flex h-100 py-3 g-3">
                         <div class="col rounded-3">
 
-                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm " style="max-height: calc(100vh - 140px);">
-                            <div class="row d-flex">
-                                <div class="col">
-                                    <table class="table table-hover table-borderless overflow-hidden " style="font-size: 13px;">
-                                        <tbody>
-                                            <?php if ($bangunan != NULL) {
+                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm overflow-scroll " style="max-height: calc(100vh - 140px);">
+                                <div class="row d-flex">
+                                    <div class="col">
+                                        <table class="table table-hover table-borderless overflow-hidden " style="font-size: 13px;">
+                                            <tbody>
+                                        
+                                                <tr>
+                                                    <th scope="row" width="50%"">Diatas Drainase</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Diatas_Drainase ?></td>
 
-                                                foreach ($bangunan as $b) {
-                                                    if ($b->Memiliki_IMB == '1') {
-                                                        $mem = 'Memiliki';
-                                                    } else {
-                                                        $mem = 'Tidak Memiliki';
-                                                    }
-                                                    $luas_lahan = $this->Buka_peta->frd('tb_lain', $b->id, 'id_bangunan');
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Diatas rel</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Diatas_rel ?></td>
 
-                                                    if ($luas_lahan != NULL) {
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian lantai dasar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_lantai_dasar ?> </td>
 
-                                                        foreach ($luas_lahan as $ln) {
-                                                            if ($l = $ln->Luas_Lahan) {
-                                                            } else {
-                                                                $l = 0;
-                                                            }
-                                                        }
-                                                        foreach ($luas_lahan as $ln) {
-                                                            if ($ln->Kesesuaian_e_RTH == '1') {
-                                                                $rth = 'Sesuai';
-                                                            } else {
-                                                                $rth = 'Tidak Sesuai';
-                                                            }
-                                                        }
-                                                        foreach ($luas_lahan as $ln) {
-                                                            if ($ln->antar_masa1 == '1') {
-                                                                $mss = 'Sesuai';
-                                                            } else {
-                                                                $mss = 'Tidak Sesuai';
-                                                            } 
-                                                            if ($ln->Kesesuaian_Jarak_Bangunan_m == '1') {
-                                                                $ksj = 'Sesuai';
-                                                            } else {
-                                                                $ksj = 'Tidak Sesuai';
-                                                            }
-                                                        }
-                                                        
-                                                    }
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Lantai Dasar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Luas_Lantai_Dasar ?> m <sup>2</sup></td>
 
-                                            ?>
-                                            <?php }
-                                            } ?>
-
-                                            <tr>
-                                                <th scope="row" width="50%"">Diatas Drainase</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Diatas_Drainase ?></td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Diatas rel</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Diatas_rel ?></td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian lantai dasar</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_lantai_dasar ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Luas Lantai Dasar</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Luas_Lantai_Dasar ?> m <sup>2</sup></td>
-
-                                            </tr>
+                                                </tr>
 
 
-                                            <tr>
-                                                <th scope="row" width="50%"">Luas Lahan</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Luas_Lahan ?> m <sup>2</sup></td>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Lahan</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Luas_Lahan ?> m <sup>2</sup></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Koefisien Dasar</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Koefisien_Dasar ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Koefisien Dasar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Koefisien_Dasar ?></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Prosen_Koefisien_Dasar</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Prosen_Koefisien_Dasar ?> %</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Prosen_Koefisien_Dasar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Prosen_Koefisien_Dasar ?> %</td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian Luas lantai</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_Luas_lantai ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Luas lantai</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_Luas_lantai ?> </td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Luas Lantai</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Luas_Lantai ?>m <sup>2</sup></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Lantai</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Luas_Lantai ?>m <sup>2</sup></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian Jumlah Lantai</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_Jumlah_Lantai ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Jumlah Lantai</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_Jumlah_Lantai ?></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Jumlah Lantai</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Jumlah_Lantai ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jumlah Lantai</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Jumlah_Lantai ?></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian Ketinggian</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_Ketinggian ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Ketinggian</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_Ketinggian ?> </td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Ketinggian</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Ketinggian ?> m</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Ketinggian</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Ketinggian ?> m</td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">KKOP Penerbangan</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->KKOP_Penerbangan ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">KKOP Penerbangan</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->KKOP_Penerbangan ?></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">KKOP Penerbangan </th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->KKOP_Penerbangan_m ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">KKOP Penerbangan </th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->KKOP_Penerbangan_m ?></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian Daerah Hijau</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_Daerah_Hijau ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Daerah Hijau</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_Daerah_Hijau ?> </td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Luas Daerah Hijau</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Luas_Daerah_Hijau ?> m <sup>2</sup></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Daerah Hijau</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Luas_Daerah_Hijau ?> m <sup>2</sup></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian Daerah Hijau</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_Daerah_Hijau ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Daerah Hijau</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_Daerah_Hijau ?> </td>
 
-                                            </tr>
-                                            
+                                                </tr>
 
 
-                                        </tbody>
 
-                                    </table>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    <div class="col">
+                                        <table class="table table-hover table-borderless overflow-hidden" style="font-size: 13px;">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian ERTH</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $rth ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Prosentase ERTH</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Prosentase_erth ?> %</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%""> Kesesuaian Jarak Antar Masa Bangunan</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $mss ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">A1</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->masaa1 ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">B1</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->masab1 ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jarak Antar Massa</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->jarak1 ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">A2</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->masaa2 ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">B2</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->masab2 ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jarak Antar Massa</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->jarak2 ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">A3</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->masaa3 ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">B3</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->masab3 ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jarak Antar Massa</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $sepadan[0]->jarak3 ?> </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian tinggi pagar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_tinggi_pagar ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Tinggi pagar </th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Tinggi_pagar_m ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">memiliki sumur resapan</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->memiliki_sumur_resapan ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kondisi drainase</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kondisi_drainase ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Ruang parkir</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Ruang_parkir ?> </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
                                 </div>
-                                <div class="col">
-                                    <table class="table table-hover table-borderless overflow-hidden" style="font-size: 13px;">
-                                        <tbody>
-                                        <tr>
-                                                <th scope="row" width="50%"">Kesesuaian ERTH</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $rth ?> </td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Prosentase ERTH</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Prosentase_erth ?> %</td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%""> Kesesuaian Jarak Antar Masa Bangunan</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $mss ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">A1</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->A1 ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">B1</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->B1 ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Jarak Antar Massa</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->antar_masa_m1 ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">A2</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->A2 ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">B2</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->B2 ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Jarak Antar Massa</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->antar_masa_m2 ?> </td>
-
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">A3</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->A3 ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">B3</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->B3 ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Jarak Antar Massa</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->antar_masa_m3 ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian Jarak Bangunan</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_Jarak_Bangunan_m ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kesesuaian tinggi pagar</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kesesuaian_tinggi_pagar ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Tinggi pagar </th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Tinggi_pagar_m ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">memiliki sumur resapan</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->memiliki_sumur_resapan ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Kondisi drainase</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Kondisi_drainase ?> </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row" width="50%"">Ruang parkir</th>
-                                                <td style="width:2%">:</td>
-                                                <td><?= $ln->Ruang_parkir ?> </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
-                                </div>
-                            </div>
-                                
 
                             </div>
 
@@ -823,64 +730,42 @@
                                 <div class="card-body">
                                     <div class="row  g-3">
                                         <div class="col-md-6 pb-3   ">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto1) ?>" alt="" width="100%" height="80%" style="object-fit: cover;">
 
                                         </div>
                                         <div class="col-md-6 ">
-                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $bangunan[0]->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
                                         </div>
 
                                     </div>
                                     <table class="table table-hover table-borderless overflow-hidden " style="font-size: 12px;">
 
                                         <tbody>
-                                            <?php if ($bangunan != NULL) {
-
-                                                foreach ($bangunan as $b) {
-                                                    if ($b->Memiliki_IMB == '1') {
-                                                        $mem = 'Memiliki';
-                                                    } else {
-                                                        $mem = 'Tidak Memiliki';
-                                                    }
-                                                    $luas_lahan = $this->Buka_peta->frd('tb_lain', $b->id, 'id_bangunan');
-
-                                                    if ($luas_lahan != NULL) {
-
-                                                        foreach ($luas_lahan as $ln) {
-                                                            if ($l = $ln->Luas_Lahan) {
-                                                            } else {
-                                                                $l = 0;
-                                                            }
-                                                        }
-                                                    }
-
-                                            ?>
-                                            <?php }
-                                            } ?>
+                                          
 
 
                                             <tr>
                                                 <th scope="row" width="40%">Nama Pemilik</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Nama_Pemilik ?></td>
+                                                <td><?= $bangunan[0]->Nama_Pemilik ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Alamat</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Alamat ?>, <?= $b->Kelurahan ?> ,<?= $b->Kecamatan ?> </td>
+                                                <td><?= $bangunan[0]->Alamat ?>, <?= $bangunan[0]->Kelurahan ?> ,<?= $bangunan[0]->Kecamatan ?> </td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Kelurahan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Kelurahan ?> </td>
+                                                <td><?= $bangunan[0]->Kelurahan ?> </td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Kecamatan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Kecamatan ?> </td>
+                                                <td><?= $bangunan[0]->Kecamatan ?> </td>
 
                                             </tr>
 
@@ -892,19 +777,19 @@
                                             <tr>
                                                 <th scope="row" width="40%">Nomor IMB</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Nomor_IMB ?></td>
+                                                <td><?= $bangunan[0]->Nomor_IMB ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Status Kepemilikan</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Status_Kepemilikan ?></td>
+                                                <td><?= $bangunan[0]->Status_Kepemilikan ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Fungsi</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $b->Fungsi ?></td>
+                                                <td><?= $bangunan[0]->Fungsi ?></td>
 
                                             </tr>
                                             <tr>
@@ -916,13 +801,13 @@
                                             <tr>
                                                 <th scope="row" width="40%">Jumlah Lantai</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $ln->Jumlah_Lantai ?></td>
+                                                <td><?= $lain[0]->Jumlah_Lantai ?></td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row" width="40%">Ketinggian</th>
                                                 <td style="width:2%">:</td>
-                                                <td><?= $ln->Ketinggian ?> m<sup>2</sup></td>
+                                                <td><?= $lain[0]->Ketinggian ?> m<sup>2</sup></td>
 
                                             </tr>
 
