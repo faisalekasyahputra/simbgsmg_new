@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'http://localhost/simbgsmg_new/';
-$config['base_url'] = 'https://monarch-sweet-deadly.ngrok-free.app/simbgsmg_new/';
+$config['base_url'] = 'http://localhost/simbgsmg_new/';
+// $config['base_url'] = 'https://monarch-sweet-deadly.ngrok-free.app/simbgsmg_new/';
 
 /*
 |--------------------------------------------------------------------------
