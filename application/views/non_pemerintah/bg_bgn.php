@@ -76,9 +76,9 @@
                                         <?php if ($col[1] != NULL) {?>
                                         <td><?=$m?></td>
                                         <?php } ?>
-                                        <td><button class="btn btn-primary d-flex align-items-center"><i class="fa fa-database me-2" aria-hidden="true"></i>
+                                        <td><a class="btn btn-primary d-flex align-items-center" href="<?=base_url('Welcome/data_opd/'.$b->id )?>" target="_blank"><i class="fa fa-database me-2" aria-hidden="true"></i>
                                                 <p class="m-0"> Detail</p>
-                                            </button></td>
+                                            </a></td>
                                     </tr>
                                     <?php           
                                        $i++; }

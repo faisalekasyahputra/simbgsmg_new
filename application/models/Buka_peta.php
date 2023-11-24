@@ -165,6 +165,7 @@ class Buka_peta extends CI_Model
     {
         $this->db->select("tb_bangunan.Nama_Pemilik, 
         tb_bangunan.Alamat, 
+        tb_bangunan.id, 
         tb_bangunan.Kecamatan, 
         tb_bangunan.Kelurahan, 
         tb_sepadan.".$att.", tb_sepadan.".$att."_m");
@@ -183,9 +184,9 @@ class Buka_peta extends CI_Model
     function tb_profil($fiedl,$jml_field,$fiedl2)
     {
         if ($jml_field == 1) {
-            $this->db->select("	tb_lain.".$fiedl.",tb_bangunan.Nama_Pemilik,tb_bangunan.Alamat,tb_bangunan.Kecamatan,tb_bangunan.Kelurahan");
+            $this->db->select("	tb_lain.".$fiedl.",tb_bangunan.Nama_Pemilik,tb_bangunan.Alamat,tb_bangunan.Kecamatan,tb_bangunan.Kelurahan,tb_bangunan.id");
         }else{
-            $this->db->select("	tb_lain.".$fiedl.",".$fiedl2.",tb_bangunan.Nama_Pemilik,tb_bangunan.Alamat,tb_bangunan.Kecamatan,tb_bangunan.Kelurahan");
+            $this->db->select("	tb_lain.".$fiedl.",".$fiedl2.",tb_bangunan.Nama_Pemilik,tb_bangunan.Alamat,tb_bangunan.Kecamatan,tb_bangunan.Kelurahan,tb_bangunan.id");
         }
         
        
@@ -216,6 +217,41 @@ class Buka_peta extends CI_Model
         {
             return NULL;
         }
+    }
+
+    public function tes($tablename,$args,$field){
+        $this->db->where("id <",1293);
+        $query = $this->db->get('tb_bangunan');
+        $bangunan =  $query->result();
+
+		$bng = '';
+
+        if ($bangunan != null) {
+
+            foreach ($bangunan as $k) {
+
+                $koor = $k->Lng.','.$k->Lat;
+
+                $bng = $bng.'{
+
+                    "type": "Feature","properties": {"id":"'.$k->id.'","Pemilik":"'.$k->Nama_Pemilik.'","Fungsi":"'.$k->Fungsi.'","Memiliki_IMB":"'.$k->Memiliki_IMB.'","No_IMB":"'.$k->Nomor_IMB.'","show_on_map": true},
+
+                    "geometry": {"type": "Point","coordinates": ['.$koor.'] }
+
+                },';
+
+
+
+            }
+
+        }else{
+
+            $bng = NULL;
+
+        }
+
+        return $bng;
+
     }
 }
 ?>

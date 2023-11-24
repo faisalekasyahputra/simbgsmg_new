@@ -122,7 +122,7 @@
             var ico = icone1(feature.properties['<?=$Legenda[3]?>']);
         <?php } ?>    
         var Url_nya = "<?=base_url('assets/marker/')?>"+ico;
-        var Icon = L.icon({iconUrl:Url_nya,iconSize: [30],});
+        var Icon = L.icon({iconUrl:Url_nya,iconSize: [15],});
         var marker = L.marker(latlng, {icon:Icon});
         return marker
     }
@@ -137,7 +137,7 @@
             out.push('Fungsi: '+f.properties['Fungsi']);
             out.push('Nomor IMB : '+f.properties['No_IMB']);
             out.push("<center><img src='<?=base_url("assets/foto")?>/"+foto+"' width='180px' ></center>");
-            out.push("<center><a href='<?=base_url("Detail/sumur/")?>"+f.properties['id']+"'  target='blank'>"+'Lihat Detail'+"</a></center>");
+            out.push("<center><a href='<?=base_url("Welcome/data_opd/")?>"+f.properties['id']+"'  target='blank'>"+'Lihat Detail'+"</a></center>");
           l.bindPopup(out.join("<br />"));    
 
         }

@@ -6,9 +6,10 @@
 
                 <!-- NAV TABS    -->
                 <div class="nav flex-column nav-pills py-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link nav-link-tab active primary-color m-2 btn  glass text-start" id="vprofil-tab" data-bs-toggle="pill" data-bs-target="#profil-tab" type="button" role="tab" aria-controls="profil-tab" aria-selected="true"><i class="fa fa-home me-2" aria-hidden="true"></i> Profil Kepemilikan</a>
+                    <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vpeta-tab" data-bs-toggle="pill" data-bs-target="#peta-tab" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true"><i class="fa fa-map me-2" aria-hidden="true"></i> Peta Spasial</a>
+                    <a class="nav-link nav-link-tab active primary-color m-2 btn  glass text-start" id="vprofil-tab" data-bs-toggle="pill" data-bs-target="#profil-tab" type="button" role="tab" aria-controls="profil-tab" aria-selected="false"><i class="fa fa-home me-2" aria-hidden="true"></i> Profil Kepemilikan</a>
                     <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vteknis-tab" data-bs-toggle="pill" data-bs-target="#teknis-tab" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-gear me-2"></i> Profil Bangunan</a>
-                    <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vpeta-tab" data-bs-toggle="pill" data-bs-target="#peta-tab" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa fa-map me-2" aria-hidden="true"></i> Peta Spasial</a>
+                    
                     <a class="nav-link nav-link-tab primary-color m-2 btn  glass text-start" id="vklas-tab" data-bs-toggle="pill" data-bs-target="#klas-tab" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-columns me-2" aria-hidden="true"></i> Garis Sepadan</a>
                 </div>
 
@@ -174,7 +175,7 @@
                         <div class="col rounded-3">
 
                             <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm">
-                                <iframe class="img-thumbnail rounded p-0 m-auto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253285.74818424686!2d110.29180009832088!3d-7.287422096580153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708244725006cd%3A0x3027a76e352bcb0!2sKabupaten%20Semarang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1699188369009!5m2!1sid!2sid" width="100%" style="border:0; object-fit:fill; height:100%;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div id="map" class="rounded p-0 m-0"  style="width: 100%; height: 100px;"></div>
                             </div>
                         </div>
                         <div id="sidebar-right" class="col-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
@@ -291,73 +292,176 @@
                                 <table class="table table-hover table-borderless overflow-hidden">
 
                                     <tbody>
-                                        <tr>
+                                        <?php if ($sepadan != null) {
+                                            $gs_bangunan = $sepadan[0]->GS_Bangunan;
+                                            $gs_pantai =$sepadan[0]->GS_Pantai;
+                                            $gs_sungai =$sepadan[0]->GS_Sungai;
+                                            $gs_waduk =$sepadan[0]->GS_Waduk;
+                                            $gs_danau =$sepadan[0]->GS_Danau;
+                                            $gs_rel =$sepadan[0]->GS_Rel;
+                                            $gs_saluran =$sepadan[0]->GS_Saluran;
+                                            $gs_sutet =$sepadan[0]->GS_Sutet;
+                                            $gs_mataair =$sepadan[0]->GS_mataair;
+                                            if ($gs_bangunan == '1') {
+                                                $gs_b ="Sesuai";
+                                                $gs_b_m = $sepadan[0]->GS_Bangunan_m;
+                                            }else{
+                                                $gs_b = "Tidak Sesuai";
+                                                $gs_b_m = '0';
+                                            }
+                                            if ($gs_pantai == '1') {
+                                                $gs_p ="Sesuai";
+                                                $gs_p_m = $sepadan[0]->GS_Pantai_m;
+                                            }else{
+                                                $gs_p = "Tidak Sesuai";
+                                                $gs_p_m = '0';
+                                            }
+                                            if ($gs_sungai == '1') {
+                                                $gs_s ="Sesuai";
+                                                $gs_s_m = $sepadan[0]->GS_Sungai_m;
+                                            }else{
+                                                $gs_s = "Tidak Sesuai";
+                                                $gs_s_m = '0';
+                                            }
+                                            if ($gs_waduk == '1') {
+                                                $gs_w ="Sesuai";
+                                                $gs_w_m = $sepadan[0]->GS_Waduk_m;
+                                            }else{
+                                                $gs_w = "Tidak Sesuai";
+                                                $gs_w_m = '0';
+                                            }
+                                            if ($gs_danau == '1') {
+                                                $gs_d ="Sesuai";
+                                                $gs_d_m = $sepadan[0]->GS_Danau_m;
+                                            }else{
+                                                $gs_d = "Tidak Sesuai";
+                                                $gs_d_m = '0';
+                                            }
+                                            if ($gs_rel == '1') {
+                                                $gs_r ="Sesuai";
+                                                $gs_r_m = $sepadan[0]->GS_Rel_m;
+                                            }else{
+                                                $gs_r = "Tidak Sesuai";
+                                                $gs_r_m = '0';
+                                            }
+                                            if ($gs_saluran == '1') {
+                                                $gs_sal ="Sesuai";
+                                                $gs_sal_m = $sepadan[0]->GS_Saluran_m;
+                                            }else{
+                                                $gs_sal = "Tidak Sesuai";
+                                                $gs_sal_m = '0';
+                                            }
+                                            if ($gs_sutet == '1') {
+                                                $gs_sut ="Sesuai";
+                                                $gs_sut_m = $sepadan[0]->GS_Sutet_m;
+                                            }else{
+                                                $gs_sut = "Tidak Sesuai";
+                                                $gs_sut_m = '0';
+                                            }
+                                            if ($gs_mataair == '1') {
+                                                $gs_m ="Sesuai";
+                                                $gs_m_m = $sepadan[0]->GS_mataair;
+                                            }else{
+                                                $gs_m = "Tidak Sesuai";
+                                                $gs_m_m = '0';
+                                            }
+                                        }else{
+                                            $gs_b = '-';
+                                            $gs_b_m = '-';
+                                            $gs_p = '-';
+                                            $gs_p_m = '-';
+                                            $gs_s = '-';
+                                            $gs_s_m = '-';
+                                            $gs_w = '-';
+                                            $gs_w_m = '-';
+                                            $gs_d = '-';
+                                            $gs_d_m = '-';
+                                            $gs_r = '-';
+                                            $gs_r_m = '-';
+                                            $gs_sal = '-';
+                                            $gs_sal_m = '-';
+                                            $gs_sut = '-';
+                                            $gs_sut_m = '-';
+                                            $gs_m = '-';
+                                            $gs_m_m = '-';
+                                        }
+                                        ?>
+                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Bangunan</th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_b ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_b_m?> m</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Pantai</th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_p ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_p_m?> m</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Sungai </th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_s ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_s_m?> m</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Waduk</th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_w ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_w_m?> m</td>
 
                                         </tr>
 
                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Danau</th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_d ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_d_m?> m</td>
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Rel Kereta </th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_r ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_r_m?> m</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" width="40%">Jarak GS Saluran</th>
+                                            <td style="width:2%">:</td>
+                                            <td width="15%"><?= $gs_sal ?></td>
+                                            <th class="text-start" scope="row" width="15%">Jarak</th>
+                                            <td style="width:2%">:</td>
+                                            <td> <?=$gs_sal_m?> m</td>
+
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Jaringan Listrik SUTET</th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_sut ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_sut_m?> m</td>
 
                                         </tr>
                                         <tr>
                                             <th scope="row" width="40%">Jarak GS Mata Air
                                             </th>
                                             <td style="width:2%">:</td>
-                                            <td width="15%"><?= $bangunan[0]->Fungsi ?></td>
+                                            <td width="15%"><?= $gs_m ?></td>
                                             <th class="text-start" scope="row" width="15%">Jarak</th>
                                             <td style="width:2%">:</td>
-                                            <td> .... m</td>
+                                            <td> <?=$gs_m_m?> m</td>
                                         </tr>
 
 
@@ -834,3 +938,16 @@
 
     </div>
 </div>
+<script>
+    var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+        maxZoom: 20,
+        subdomains:['mt0','mt1','mt2','mt3']});
+    var map = L.map('map', {
+      center: [-7.021114, 110.426165],
+      zoom: 12,
+      fullscreenControl: true,
+      fullscreenControlOptions: {
+        position: 'topleft'
+      },
+      layers: [googleSat]});
+</script>
