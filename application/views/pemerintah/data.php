@@ -151,6 +151,9 @@
                                         <div class="col">
                                             <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
                                         </div>
+                                        <div class="col">
+                                            <img class="img-thumbnail border-top-cstm p-0" src="<?= base_url('assets/img/' . $b->foto2) ?>" alt="" width="100%" style="object-fit: cover;">
+                                        </div>
 
                                     </div>
                                 </div>
@@ -527,12 +530,30 @@
                     <div class="row d-flex h-100 py-3 g-3">
                         <div class="col rounded-3">
 
+<<<<<<< Updated upstream
                             <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm " style="max-height: calc(100vh - 140px);">
                             <div class="row d-flex">
                                 <div class="col">
                                     <table class="table table-hover table-borderless overflow-hidden " style="font-size: 13px;">
                                         <tbody>
                                             <?php if ($bangunan != NULL) {
+=======
+<<<<<<< Updated upstream
+                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm overflow-scroll " style="max-height: calc(100vh - 140px);">
+=======
+                            <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm " style="max-height: calc(100vh - 140px);">
+>>>>>>> Stashed changes
+                                <div class="row d-flex">
+                                    <div class="col">
+                                        <table class="table table-hover table-borderless overflow-hidden " style="font-size: 13px;">
+                                            <tbody>
+<<<<<<< Updated upstream
+                                        
+                                                <tr>
+                                                    <th scope="row" width="50%"">Diatas Drainase</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Diatas_Drainase ?></td>
+>>>>>>> Stashed changes
 
                                                 foreach ($bangunan as $b) {
                                                     if ($b->Memiliki_IMB == '1') {
@@ -572,6 +593,7 @@
                                                         
                                                     }
 
+<<<<<<< Updated upstream
                                             ?>
                                             <?php }
                                             } ?>
@@ -684,6 +706,217 @@
                                                 <th scope="row" width="50%"">Kesesuaian Daerah Hijau</th>
                                                 <td style="width:2%">:</td>
                                                 <td><?= $ln->Kesesuaian_Daerah_Hijau ?> </td>
+=======
+=======
+                                                <?php if ($bangunan != NULL) {
+
+                                                    foreach ($bangunan as $b) {
+                                                        if ($b->Memiliki_IMB == '1') {
+                                                            $mem = 'Memiliki';
+                                                        } else {
+                                                            $mem = 'Tidak Memiliki';
+                                                        }
+                                                        $luas_lahan = $this->Buka_peta->frd('tb_lain', $b->id, 'id_bangunan');
+
+                                                        if ($luas_lahan != NULL) {
+
+                                                            foreach ($luas_lahan as $ln) {
+                                                                if ($l = $ln->Luas_Lahan) {
+                                                                } else {
+                                                                    $l = 0;
+                                                                }
+                                                            }
+                                                            foreach ($luas_lahan as $ln) {
+                                                                if ($ln->Kesesuaian_e_RTH == '1') {
+                                                                    $rth = 'Sesuai';
+                                                                } else {
+                                                                    $rth = 'Tidak Sesuai';
+                                                                }
+                                                            }
+                                                            foreach ($luas_lahan as $ln) {
+                                                                if ($ln->antar_masa1 == '1') {
+                                                                    $mss = 'Sesuai';
+                                                                } else {
+                                                                    $mss = 'Tidak Sesuai';
+                                                                }
+                                                                if ($ln->Kesesuaian_Jarak_Bangunan_m == '1') {
+                                                                    $ksj = 'Sesuai';
+                                                                } else {
+                                                                    $ksj = 'Tidak Sesuai';
+                                                                }
+                                                            }
+                                                        }
+
+                                                ?>
+                                                <?php }
+                                                } ?>
+
+                                                <tr>
+                                                    <th scope="row" width="50%"">Diatas Drainase</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $ln->Diatas_Drainase ?></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Diatas rel</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $ln->Diatas_rel ?></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian lantai dasar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $ln->Kesesuaian_lantai_dasar ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Lantai Dasar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $ln->Luas_Lantai_Dasar ?> m <sup>2</sup></td>
+
+>>>>>>> Stashed changes
+                                                </tr>
+
+
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Lahan</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Luas_Lahan ?> m <sup>2</sup></td>
+=======
+                                                    <td><?= $ln->Luas_Lahan ?> m <sup>2</sup></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Koefisien Dasar</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Koefisien_Dasar ?></td>
+=======
+                                                    <td><?= $ln->Koefisien_Dasar ?></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Prosen_Koefisien_Dasar</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Prosen_Koefisien_Dasar ?> %</td>
+=======
+                                                    <td><?= $ln->Prosen_Koefisien_Dasar ?> %</td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Luas lantai</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Kesesuaian_Luas_lantai ?> </td>
+=======
+                                                    <td><?= $ln->Kesesuaian_Luas_lantai ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Lantai</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Luas_Lantai ?>m <sup>2</sup></td>
+=======
+                                                    <td><?= $ln->Luas_Lantai ?>m <sup>2</sup></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Jumlah Lantai</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Kesesuaian_Jumlah_Lantai ?></td>
+=======
+                                                    <td><?= $ln->Kesesuaian_Jumlah_Lantai ?></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jumlah Lantai</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Jumlah_Lantai ?></td>
+=======
+                                                    <td><?= $ln->Jumlah_Lantai ?></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Ketinggian</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Kesesuaian_Ketinggian ?> </td>
+=======
+                                                    <td><?= $ln->Kesesuaian_Ketinggian ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Ketinggian</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Ketinggian ?> m</td>
+=======
+                                                    <td><?= $ln->Ketinggian ?> m</td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">KKOP Penerbangan</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->KKOP_Penerbangan ?></td>
+=======
+                                                    <td><?= $ln->KKOP_Penerbangan ?></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">KKOP Penerbangan </th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->KKOP_Penerbangan_m ?></td>
+=======
+                                                    <td><?= $ln->KKOP_Penerbangan_m ?></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Daerah Hijau</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Kesesuaian_Daerah_Hijau ?> </td>
+=======
+                                                    <td><?= $ln->Kesesuaian_Daerah_Hijau ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Luas Daerah Hijau</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Luas_Daerah_Hijau ?> m <sup>2</sup></td>
+=======
+                                                    <td><?= $ln->Luas_Daerah_Hijau ?> m <sup>2</sup></td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Daerah Hijau</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Kesesuaian_Daerah_Hijau ?> </td>
+=======
+                                                    <td><?= $ln->Kesesuaian_Daerah_Hijau ?> </td>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
                                             </tr>
                                             
@@ -691,7 +924,182 @@
 
                                         </tbody>
 
+<<<<<<< Updated upstream
                                     </table>
+=======
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    <div class="col">
+                                        <table class="table table-hover table-borderless overflow-hidden" style="font-size: 13px;">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian ERTH</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $rth ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Prosentase ERTH</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Prosentase_erth ?> %</td>
+=======
+                                                    <td><?= $ln->Prosentase_erth ?> %</td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%""> Kesesuaian Jarak Antar Masa Bangunan</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $mss ?> </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">A1</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->masaa1 ?> </td>
+=======
+                                                    <td><?= $ln->A1 ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">B1</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->masab1 ?> </td>
+=======
+                                                    <td><?= $ln->B1 ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jarak Antar Massa</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->jarak1 ?> </td>
+=======
+                                                    <td><?= $ln->antar_masa_m1 ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">A2</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->masaa2 ?> </td>
+=======
+                                                    <td><?= $ln->A2 ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">B2</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->masab2 ?> </td>
+=======
+                                                    <td><?= $ln->B2 ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jarak Antar Massa</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->jarak2 ?> </td>
+=======
+                                                    <td><?= $ln->antar_masa_m2 ?> </td>
+>>>>>>> Stashed changes
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">A3</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->masaa3 ?> </td>
+=======
+                                                    <td><?= $ln->A3 ?> </td>
+>>>>>>> Stashed changes
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">B3</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->masab3 ?> </td>
+=======
+                                                    <td><?= $ln->B3 ?> </td>
+>>>>>>> Stashed changes
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Jarak Antar Massa</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $sepadan[0]->jarak3 ?> </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian tinggi pagar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $lain[0]->Kesesuaian_tinggi_pagar ?> </td>
+=======
+                                                    <td><?= $ln->antar_masa_m3 ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian Jarak Bangunan</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $ln->Kesesuaian_Jarak_Bangunan_m ?> </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kesesuaian tinggi pagar</th>
+                                                <td style=" width:2%">:</td>
+                                                    <td><?= $ln->Kesesuaian_tinggi_pagar ?> </td>
+>>>>>>> Stashed changes
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Tinggi pagar </th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Tinggi_pagar_m ?> </td>
+=======
+                                                    <td><?= $ln->Tinggi_pagar_m ?> </td>
+>>>>>>> Stashed changes
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">memiliki sumur resapan</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->memiliki_sumur_resapan ?> </td>
+=======
+                                                    <td><?= $ln->memiliki_sumur_resapan ?> </td>
+>>>>>>> Stashed changes
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Kondisi drainase</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Kondisi_drainase ?> </td>
+=======
+                                                    <td><?= $ln->Kondisi_drainase ?> </td>
+>>>>>>> Stashed changes
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" width="50%"">Ruang parkir</th>
+                                                <td style=" width:2%">:</td>
+<<<<<<< Updated upstream
+                                                    <td><?= $lain[0]->Ruang_parkir ?> </td>
+=======
+                                                    <td><?= $ln->Ruang_parkir ?> </td>
+>>>>>>> Stashed changes
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+>>>>>>> Stashed changes
                                 </div>
                                 <div class="col">
                                     <table class="table table-hover table-borderless overflow-hidden" style="font-size: 13px;">

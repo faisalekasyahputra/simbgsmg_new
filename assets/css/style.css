@@ -35,7 +35,11 @@
   border: #25185A;
   background-color: var(--w-primary);
 }
-
+.btn-sec:hover{
+  background: gainsboro;
+  border: 1px dashed var(--w-primary)!important;
+  transition: all .5s ease-in-out;
+}
 .glass {
   background: rgba(255, 255, 255, 0.28);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -58,7 +62,7 @@
 
 .square{
   position: absolute;
-  transform:translatey( calc(100% - 135%) ) translateX( calc(100% - 130%));
+  transform:translatey( calc(100% - 135%) ) translateX( calc(100% - 120%));
   z-index: 0;
 }
 
