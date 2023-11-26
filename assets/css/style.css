@@ -44,9 +44,10 @@
 }
 
 .glass-nocolor {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(9.2px);
-  backdrop-filter: blur(9.2px);
+  background: rgba(255, 255, 255, 0.281)!important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+  -webkit-backdrop-filter: blur(9.2px)!important;
+  backdrop-filter: blur(9.2px)!important;
 }
 
 .glass-yellow {
@@ -92,13 +93,22 @@
   color: var(--w-primary)!important;
   font-weight: bold;
 }
+
+.nav-link-tab:active{
+  background-color: var(--w-secondary)!important;
+  border: 1px solid var(--w-primary);
+  border-bottom: 1px solid var(--w-primary);
+  border-right: 1px solid var(--w-primary);
+  color: var(--w-primary)!important;
+  font-weight: bold;
+}
 .nav-link-tab{
+  font-size: smaller;
   border: 1px solid var(--w-primary);
   border-bottom: 4px solid var(--w-primary);
   border-right: 4px solid var(--w-primary);
 }
 .nav-link-tab:hover{
-  border: 1px solid var(--w-primary);
   background-color: var(--w-secondary);
   color:var(--w-primary);
   transition: 500ms ease;
@@ -119,4 +129,6 @@
 table th , table td ,table tr , .text-table{
  background-color: transparent!important;
 }
-
+.textSide{
+  font-size: smaller!important;
+}
