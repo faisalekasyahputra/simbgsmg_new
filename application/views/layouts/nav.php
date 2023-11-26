@@ -130,6 +130,9 @@
                            
                         </ul>
                     </li>
+                    <li>
+                        <a href="<?=base_url('backoffice')?>" target="_blank" class="btn btn-sec border border-1 border-dark ms-2"><i class="fa fa-gears me-1" aria-hidden="true"></i> Admin </a>
+                    </li>
                 </ul>
             </div>
         </div>
