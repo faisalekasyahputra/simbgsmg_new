@@ -55,12 +55,12 @@
                 <img class=" mb-3" src="<?= base_url('assets/img/logo.png') ?>" alt="" width="150px">
                 
 
-                <div class="form-floating my-2">
-                    <input type="email" class="form-control" id="user" name="user" placeholder="Masukkan Email Pengguna">
+                <div class="form-floating my-2 ">
+                    <input type="email" class="form-control glass" id="user" name="user" placeholder="Masukkan Email Pengguna">
                     <label for="floatingInput">Nama Pengguna</label>
                 </div>
                 <div class="form-floating my-2">
-                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Kata Sandi">
+                    <input type="password" class="form-control glass" id="pwd" name="pwd" placeholder="Kata Sandi">
                     <label for="floatingPassword">Kata Sandi</label>
                 </div>
                 <button id="btnmasuk" class="btn btn-dark w-100 py-3 my-3" type="submit"><p class="h5 m-0">MASUK</p></button>
