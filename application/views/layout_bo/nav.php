@@ -3,17 +3,18 @@
         
         <div>
           <a class="navbar-brand brand-logo" href="#">
-          User Admin
+          <img src="<?=base_url('assets/img/logo.png')?>" alt="logo-pupr" width="150px">
           </a>
           
         </div>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
-        <ul class="navbar-nav">
+        <ul class="navbar-nav position-relative w-100">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Selamat Datang, <span class="text-black fw-bold">di SimBG</span></h1>
-            <h3 class="welcome-sub-text"></h3>
+            <h2 class="welcome-text mb-0"><i class="fa fa-smile-o me-2" aria-hidden="true"></i> Selamat Datang, <span class="text-black fw-bold">Admin</span></h2>
+            <h3 class="welcome-sub-text">Sistem Informasi Manajemen Bina Penataan Bangunan.</h3>
           </li>
+          <a class="btn btn-dark border border-dashed-1 position-absolute " href="<?=base_url('index.php')?>" target="_blank"  style="right:0; "><i class="fa fa-home me-2" aria-hidden="true"></i>Buka Halaman Umum</a>
         </ul>
         
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-bs-toggle="offcanvas">
@@ -21,26 +22,10 @@
         </button>
       </div>
     </nav>
+    
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="ti-settings"></i></div>
-        <div id="theme-settings" class="settings-panel">
-          <i class="settings-close ti-close"></i>
-          <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border me-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border me-3"></div>Dark</div>
-          <p class="settings-heading mt-2">HEADER SKINS</p>
-          <div class="color-tiles mx-0 px-4">
-            <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
-            <div class="tiles info"></div>
-            <div class="tiles dark"></div>
-            <div class="tiles default"></div>
-          </div>
-        </div>
-      </div>
+      
       <div id="right-sidebar" class="settings-panel">
         <i class="settings-close ti-close"></i>
         <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">

@@ -1,7 +1,7 @@
 <nav id="navtick" class="navbar navbar-expand-lg shadow-sm glass" data-aos="fade-down" data-aos-offset="200" data-aos-delay="100" data-aos-duration="200" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center" style="z-index: 999;" >
         <div class="container" data-aos="fade-down" data-aos-offset="100" data-aos-delay="100" data-aos-duration="400" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center" >
             <a class="navbar-brand" href="<?=base_url('welcome')?>">
-                <img src="<?=base_url('assets/img/logo.png')?>" alt="logo-pupr" width="150px">
+                <img src="<?=base_url('assets/img/logo.png')?>" alt="logo-pupr" width="150px"> 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
