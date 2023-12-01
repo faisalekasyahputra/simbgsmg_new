@@ -3,8 +3,7 @@
         <div class="container m-auto">
             <div class="row justify-content-end">
                 <div class="col-6 d-flex flex-column align-items-end">
-                    <h1 class="display-4 text-end fw-bolder judul" data-aos="fade-down" data-aos-offset="-200" data-aos-delay="100" data-aos-duration="300" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center"><i class="fa fa-building p-1 me-2" aria-hidden="true"></i> Sistem Informasi Manajemen
-                        Bina Penataan Bangunan</h1>
+                    <h1 class="display-4 text-end fw-bolder judul" data-aos="fade-down" data-aos-offset="-200" data-aos-delay="100" data-aos-duration="300" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center"><i class="fa fa-building p-1 me-2" aria-hidden="true"></i> Sistem Informasi Bangunan Gedung pada Permukiman di Kota Semarang</h1>
                     <p class="lead fs-6 fw-bold" data-aos="fade-down" data-aos-offset="-200" data-aos-delay="100" data-aos-duration="200" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center">Dinas PUPR Pemerintah Kota Semarang.</p>
                     <a class="btn btn-primary btn-lg" href="<?= base_url('Welcome/peta') ?>" data-aos="fade-down" data-aos-offset="-200" data-aos-delay="100" data-aos-duration="200" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false" data-aos-anchor-placement="top-center"><i class="fa fa-database me-2" aria-hidden="true"></i> Lihat Data</a>
                 </div>
@@ -57,12 +56,20 @@
         </div>
     </div>
 </section>
+<select name="select" class="form-select-lg slc5" id="select">
+                        <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+                        </select>
 <section id="footer">
     <footer>
         <div class="container-fluid bg-dark text-white d-flex">
+        
             <div class="container p-3 my-5 m-auto">
                 <div class="row ">
                     <div class="col-md-1">
+                        
                         <img src="<?= base_url('assets/img/logo_smg.png') ?>" alt="" width="100">
                     </div>
                     <div class="col">

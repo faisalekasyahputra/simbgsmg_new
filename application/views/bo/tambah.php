@@ -29,8 +29,8 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Kelurahan</label>
                                
-                                <select class="form-control" id="kelurahan" name="kelurahan">
-                                    <option></option>
+                                <select class="form-select " id="kelurahan" name="kelurahan" style="padding: 0;">
+                                <option></option>
                                     <?php if ($desa != NULL) {
                                         foreach ($desa as $d) {
                                         ?>
@@ -43,7 +43,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Kecamatan</label>
-                                <select class="form-control" name="kecamatan">
+                                <select class="form-select" name="kecamatan" aria-placeholder="Pilih kecamatan">
                                     <option></option>
                                     <?php if ($kec != NULL) {
                                         foreach ($kec as $k) {
@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Fungsi</label>
                                
-                                <select class="form-control" name="fungsi">
+                                <select class="form-select" name="fungsi">
                                     <option></option>
                                     <option value="Hunian">Hunian</option>
                                     <option value="Sosial Budaya">Sosial Budaya</option>
@@ -76,7 +76,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Kesesuaian Bangunan</label>
-                                <select class="form-control" name="kesesuaian">
+                                <select class="form-select" name="kesesuaian">
                                     <option></option>
                                     <option value="Sesuai">Sesuai</option>
                                     <option value="Tidak Sesuai">Tidak Sesuai</option>
@@ -89,7 +89,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Memiliki IMB</label>
                                
-                                <select class="form-control" name="memiliki_imb">
+                                <select class="form-select" name="memiliki_imb">
                                     <option></option>
                                     <option value="1">Ya</option>
                                     <option value="0">Tidak</option>
@@ -97,19 +97,10 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Nomor IMB</label>
-                                <input type="text" class="form-control" id="no_imb" name="no_imb" >
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
+                        <div class="form-group">
                                 <label for="exampleInputPassword1">Status Kepemilikan</label>
                                
-                                <select class="form-control" name="status_kepemilikan">
+                                <select class="form-select" name="status_kepemilikan">
                                     <option></option>
                                     <option value="SHM">SHM</option>
                                     <option value="SHGB">SHGB</option>
@@ -117,6 +108,16 @@
                                     <option value="Lainnya">Lainnya</option>
                                 </select>
                             </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                                <label for="exampleInputPassword1">Nomor IMB</label>
+                                <input type="text" class="form-control" id="no_imb" name="no_imb" >
+                            </div>
+                            
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">

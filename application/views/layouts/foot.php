@@ -3,7 +3,8 @@
      <p class="m-0 p-1">&copy; 2023 DPUPR KOTA SEMARANG.</p>
  </footer>
 
-  
+
+
  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  <script>
   AOS.init();
@@ -25,6 +26,7 @@
  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
  <script>
     $(document).ready(function() {
+    $('.slc5').select2();
     $('.slc1').select2();
     $('.slc2').select2();
     $('.slc3').select2();

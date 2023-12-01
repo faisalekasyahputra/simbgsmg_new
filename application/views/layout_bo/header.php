@@ -44,6 +44,9 @@
   <link rel="stylesheet" href="<?=base_url('assets/css_bo/style.css')?>">
   <link rel="stylesheet" href="<?=base_url('assets/css/style.css')?>">
   <!-- endinject -->
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
  
 
   <script src="<?=base_url('assets/js/leaflet-src.js')?>"></script>
