@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Kelurahan</label>
                                
-                                <select class="form-control" id="kelurahan" name="kelurahan">
+                                <select class="form-select" id="kelurahan" name="kelurahan">
                                 <option value="<?=$bangunan[0]->Kelurahan?>"><?=$bangunan[0]->Kelurahan?></option>
                                     <?php if ($desa != NULL) {
                                         foreach ($desa as $d) {
@@ -43,7 +43,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Kecamatan</label>
-                                <select class="form-control" name="kecamatan">
+                                <select class="form-select" name="kecamatan">
                                 <option value="<?=$bangunan[0]->Kecamatan?>"><?=$bangunan[0]->Kecamatan?></option>
                                     <?php if ($kec != NULL) {
                                         foreach ($kec as $k) {
@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Fungsi</label>
                                
-                                <select class="form-control" name="fungsi">
+                                <select class="form-select" name="fungsi">
                                 <option value="<?=$bangunan[0]->Fungsi?>"><?=$bangunan[0]->Fungsi?></option>
                                     <option value="Hunian">Hunian</option>
                                     <option value="Sosial Budaya">Sosial Budaya</option>
@@ -76,7 +76,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Kesesuaian Bangunan</label>
-                                <select class="form-control" name="kesesuaian">
+                                <select class="form-select" name="kesesuaian">
                                     <option value="<?=$bangunan[0]->Kesesuaian_Bangunan?>"><?=$bangunan[0]->Kesesuaian_Bangunan?></option>
                                     <option value="Sesuai">Sesuai</option>
                                     <option value="Tidak Sesuai">Tidak Sesuai</option>
@@ -89,7 +89,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Memiliki IMB</label>
                                
-                                <select class="form-control" name="memiliki_imb">
+                                <select class="form-select" name="memiliki_imb">
                                     <?php $memiliki = $bangunan[0]->Memiliki_IMB;
                                     if ($memiliki == '0') {
                                         $val = 'Tidak';
@@ -106,7 +106,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Nomor IMB</label>
-                                <input type="text" class="form-control" value="<?=$bangunan[0]->Nomor_IMB?>" id="no_imb" name="no_imb" >
+                                <input type="text" class="form-select" value="<?=$bangunan[0]->Nomor_IMB?>" id="no_imb" name="no_imb" >
                             </div>
                         </div>
                         
@@ -116,7 +116,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Status Kepemilikan</label>
                                
-                                <select class="form-control" name="status_kepemilikan">
+                                <select class="form-select" name="status_kepemilikan">
                                 <option value="<?=$bangunan[0]->Status_Kepemilikan?>"><?=$bangunan[0]->Status_Kepemilikan?></option>
                                     <option value="SHM">SHM</option>
                                     <option value="SHGB">SHGB</option>

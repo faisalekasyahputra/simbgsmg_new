@@ -12,7 +12,7 @@
         <ul class="navbar-nav position-relative w-100">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
             <h2 class="welcome-text mb-0"><i class="fa fa-smile-o me-2" aria-hidden="true"></i> Selamat Datang, <span class="text-black fw-bold">Admin</span></h2>
-            <h3 class="welcome-sub-text">Sistem Informasi Manajemen Bina Penataan Bangunan.</h3>
+            <h3 class="welcome-sub-text">Sistem Informasi Bangunan Gedung pada Permukiman di Kota Semarang.</h3>
           </li>
           <a class="btn btn-dark border border-dashed-1 position-absolute " href="<?=base_url('index.php')?>" target="_blank"  style="right:0; "><i class="fa fa-home me-2" aria-hidden="true"></i>Buka Halaman Umum</a>
         </ul>

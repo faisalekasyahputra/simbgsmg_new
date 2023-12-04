@@ -29,7 +29,7 @@
           
           <li class="nav-item nav-category">Utilitas</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="<?=base_url('Backoffice/pengguna')?>" aria-expanded="false" aria-controls="form-elements">
+            <a class="nav-link"  href="<?=base_url('Backoffice/pengguna')?>" aria-expanded="false" aria-controls="form-elements">
               <i class="menu-icon mdi mdi-card-text-outline"></i>
               <span class="menu-title">Pengguna</span>
               <i class="menu-arrow"></i>
@@ -37,7 +37,7 @@
             
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="<?=base_url('Backoffice/ganti_pass')?>" aria-expanded="false" aria-controls="charts">
+            <a class="nav-link" href="<?=base_url('Backoffice/ganti_pass')?>" aria-expanded="false" aria-controls="charts">
               <i class="menu-icon mdi  mdi-key"></i>
               <span class="menu-title">Ganti Password</span>
               <i class="menu-arrow"></i>
@@ -45,7 +45,7 @@
             
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="<?=base_url('Backoffice/sign_out')?>" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link"  href="<?=base_url('Backoffice/sign_out')?>" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-exit"></i>
               <span class="menu-title">Keluar</span>
               <i class="menu-arrow"></i>

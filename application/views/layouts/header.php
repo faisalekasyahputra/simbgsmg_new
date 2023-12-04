@@ -1,6 +1,8 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?= $title ?></title>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backofffice SIMBG Kota Semarang</title>
 <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?= base_url('assets/ico/apple-touch-icon-57x57.png') ?>" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?= base_url('assets/ico/apple-touch-icon-114x114.png') ?>" />
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?= base_url('assets/ico/apple-touch-icon-72x72.png') ?>" />
@@ -21,97 +23,64 @@
 <meta name="msapplication-square150x150logo" content="<?= base_url('assets/ico/mstile-150x150.png') ?>" />
 <meta name="msapplication-wide310x150logo" content="<?= base_url('assets/ico/mstile-310x150.png') ?>" />
 <meta name="msapplication-square310x310logo" content="<?= base_url('assets/ico/mstile-310x310.png') ?>" />
+  
+  <script src="<?=base_url('assets/js/select2.min.js')?>"></script>
+  <script src="<?=base_url('assets/js/jquery-3.5.1.js')?>"></script>
+  <link rel="stylesheet" href="<?=base_url('assets/css/feather.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/materialdesignicons.min.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/themify-icons.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/typicons.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/simple-line-icons.css')?>">
+  <link rel="stylesheet" href="<?=base_url('assets/css/vendor.bundle.base.css')?>">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?=base_url('assets/js/select.dataTables.min.css')?>">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="<?=base_url('assets/css_bo/style.css')?>">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="<?=base_url('assets/css_bo/favicon.png')?>" />
 
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="<?=base_url('assets/js/leaflet-src.js')?>"></script>
+    <link rel="stylesheet" href="<?=base_url('assets/css/leaflet.css')?>"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.2/dist/leaflet.draw-src.css" />
+    <script src="https://unpkg.com/leaflet-draw@1.0.2/dist/leaflet.draw-src.js"></script>
+    <script src="<?=base_url('assets/src/Leaflet.Draw.Event.js')?>"></script>
+    
 
-<link rel="stylesheet" href="http://localhost/ngopi/assets/css/select2.min.css">
+    <script src="<?=base_url('assets/src/Toolbar.js')?>"></script>
+    <script src="<?=base_url('assets/src/Tooltip.js')?>"></script>
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <script src="<?=base_url('assets/src/ext/GeometryUtil.js')?>"></script>
+    <script src="<?=base_url('assets/src/ext/LatLngUtil.js')?>"></script>
+    <script src="<?=base_url('assets/src/ext/LineUtil.Intersect.js')?>"></script>
+    <script src="<?=base_url('assets/src/ext/Polygon.Intersect.js')?>"></script>
+    <script src="<?=base_url('assets/src/ext/Polyline.Intersect.js')?>"></script>
+    <script src="<?=base_url('assets/src/ext/TouchEvents.js')?>"></script>
 
-<!-- Add Bootstrap CSS from a CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-<!-- Optional custom CSS -->
-
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-<script src="https://kit.fontawesome.com/40248f80b4.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="<?= base_url('/assets/css/style.css') ?>">
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<link rel="stylesheet" href="<?= base_url('assets/css/leaflet.groupedlayercontrol.css') ?>" />
-<script src="<?= base_url('assets/js/leaflet.groupedlayercontrol.js') ?>"></script>
+    <script src="<?=base_url('assets/src/draw/DrawToolbarMarker.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.Feature.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.SimpleShape.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.Polyline.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.Marker.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.Circle.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.CircleMarker.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.Polygon.js')?>"></script>
+    <script src="<?=base_url('assets/src/draw/handler/Draw.Rectangle.js')?>"></script>
 
 
-<script src="<?= base_url('/assets/js/Control.FullScreen.js') ?>"></script>
-<link rel="stylesheet" href="<?= base_url('assets/css/Control.FullScreen.css') ?>" />
+    <script src="<?=base_url('assets/src/edit/EditToolbar.js')?>"></script>
+    <script src="<?=base_url('assets/src/edit/handler/EditToolbar.Edit.js')?>"></script>
+    <script src="<?=base_url('assets/src/edit/handler/EditToolbar.Delete.js')?>"></script>
 
-<style>
-    .label_kec {
-        width: auto;
-        height: auto;
-        font-size: 12px;
-        border-color: none;
-        border-width: 0;
-        background: rgba(255, 255, 255, 0.0);
-        font-weight: bold;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-        color: white;
-    }
+    <script src="<?=base_url('assets/src/Control.Draw.js')?>"></script>
 
-    .label_des {
-        display: block;
-        width: auto;
-        height: auto;
-        font-size: 11px;
-        border-color: none;
-        border-width: 0;
-        background: rgba(255, 255, 255, 0.0);
-        font-weight: bold;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-        color: white;
-    }
+    <script src="<?=base_url('assets/src/edit/handler/Edit.Poly.js')?>"></script>
+    <script src="<?=base_url('assets/src/edit/handler/Edit.SimpleShape.js')?>"></script>
+    <script src="<?=base_url('assets/src/edit/handler/Edit.Rectangle.js')?>"></script>
+    <script src="<?=base_url('assets/src/edit/handler/Edit.Marker.js')?>"></script>
+    <script src="<?=base_url('assets/src/edit/handler/Edit.CircleMarker.js')?>"></script>
+    <script src="<?=base_url('assets/src/edit/handler/Edit.Circle.js')?>"></script>
 
-    .info {
-        padding: 6px 8px;
-        font: 14px/16px Arial, Helvetica, sans-serif;
-        background: white;
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-    }
-
-    .info h4 {
-        margin: 0 0 5px;
-        color: #777;
-    }
-
-    .legend {
-        text-align: left;
-        line-height: 18px;
-        color: #555;
-    }
-
-    .legend i {
-        width: 18px;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        opacity: 0.7;
-    }
-
-    .legend1 {
-        text-align: left;
-        line-height: 18px;
-        color: #555;
-    }
-
-    .legend i {
-        width: 18px;
-        height: 18px;
-        float: left;
-        margin-right: 8px;
-        opacity: 0.7;
-    }
-</style>
+</head>
