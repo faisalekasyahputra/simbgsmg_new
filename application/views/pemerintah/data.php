@@ -1,16 +1,16 @@
 <div class="container-fluid p-0 bg-body-tertiary">
-    <div class="container-fluid d-flex align-items-top justify-content-center p-0" style="min-height: calc(100vh - 85px);">
+    <div class="container-fluid d-flex align-items-top justify-content-center p-0 mb-5" style="min-height: calc(100vh - 85px);">
         <div class="row w-100">
 
-            <div id="sidebar-left" class="col-2  border-end border-1 bg-body" data-aos="fade-right" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+            <div id="sidebar-left" class="col-12 col-md-2 col-lg-2 border-end border-1 bg-body" data-aos="fade-right" data-aos-offset="0" data-aos-delay="150" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
 
                 <!-- NAV TABS    -->
-                <div class="nav flex-column nav-pills py-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <a class="nav-link nav-link-tab active primary-color m-2  glass text-start" id="vpeta-tab" data-bs-toggle="pill" data-bs-target="#peta-tab" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true"><i class="fa fa-map me-2" aria-hidden="true"></i> Peta Spasial</a>
-                    <a class="nav-link nav-link-tab  primary-color m-2   glass text-start" id="vprofil-tab" data-bs-toggle="pill" data-bs-target="#profil-tab" type="button" role="tab" aria-controls="profil-tab" aria-selected="false"><i class="fa fa-home me-2" aria-hidden="true"></i> Profil Kepemilikan</a>
-                    <a class="nav-link nav-link-tab primary-color m-2   glass text-start" id="vteknis-tab" data-bs-toggle="pill" data-bs-target="#teknis-tab" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-gear me-2"></i> Profil Bangunan</a>
+                <div class="nav flex-row nav-pills py-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link nav-link-tab active primary-color m-1 m-md-2 m-lg-2  glass text-start w-md-100 w-lg-100" id="vpeta-tab" data-bs-toggle="pill" data-bs-target="#peta-tab" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true"><i class="fa fa-map me-2" aria-hidden="true"></i> Peta Spasial</a>
+                    <a class="nav-link nav-link-tab  primary-color m-1 m-md-2 m-lg-2  glass text-start w-md-100 w-lg-100" id="vprofil-tab" data-bs-toggle="pill" data-bs-target="#profil-tab" type="button" role="tab" aria-controls="profil-tab" aria-selected="false"><i class="fa fa-home me-2" aria-hidden="true"></i> Profil Kepemilikan</a>
+                    <a class="nav-link nav-link-tab primary-color m-1 m-md-2 m-lg-2  glass text-start w-md-100 w-lg-100" id="vteknis-tab" data-bs-toggle="pill" data-bs-target="#teknis-tab" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa-solid fa-gear me-2"></i> Profil Bangunan</a>
                     
-                    <a class="nav-link nav-link-tab primary-color m-2   glass text-start" id="vklas-tab" data-bs-toggle="pill" data-bs-target="#klas-tab" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-columns me-2" aria-hidden="true"></i> Garis Sepadan</a>
+                    <a class="nav-link nav-link-tab primary-color m-1  m-md-2 m-lg-2 glass text-start w-md-100 w-lg-100" id="vklas-tab" data-bs-toggle="pill" data-bs-target="#klas-tab" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-columns me-2" aria-hidden="true"></i> Garis Sepadan</a>
                 </div>
 
 
@@ -138,7 +138,7 @@
 
 
                         </div>
-                        <div id="sidebar-right" class="col-4" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+                        <div id="sidebar-right" class="col-12 col-md-4 col-lg-4" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
                             <div class="card-header border border-bottom-0 bg-primary rounded-top-3 p-3 w-50 mx-3">
                                 <p class="text-capitalize m-0 text-center fw-bold text-white textSide">Foto Bangunan</p>
 
@@ -175,10 +175,10 @@
                         <div class="col rounded-3">
 
                             <div class="card rounded-3 bg-white h-100 p-3 border-top-cstm">
-                            <div id="map" class="rounded p-0 m-0"  style="width: 100%; height: 100%;"></div>
+                            <div id="map" class="rounded p-0 m-0 h-100"  style="width: 100%; min-height: 500px"></div>
                             </div>
                         </div>
-                        <div id="sidebar-right" class="col-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+                        <div id="sidebar-right" class="col-12 col-md-3 col-lg-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
                             <div class="card-header border border-bottom-0 bg-primary rounded-top-3 p-3 w-50 mx-3">
                                 <p class="text-capitalize m-0 text-center fw-bold text-white textSide">Foto Bangunan</p>
 
@@ -475,7 +475,7 @@
 
 
                         </div>
-                        <div id="sidebar-right" class="col-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+                        <div id="sidebar-right" class="col-12 col-md-3 col-lg-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
                             <div class="card-header border border-bottom-0 bg-primary rounded-top-3 p-3 w-50 mx-3">
                                 <p class="text-capitalize m-0 text-center fw-bold text-white textSide">Foto Bangunan</p>
 
@@ -818,7 +818,7 @@
 
 
                         </div>
-                        <div id="sidebar-right" class="col-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
+                        <div id="sidebar-right" class="col-12 col-md-3 col-lg-3" data-aos="fade-up" data-aos-offset="0" data-aos-delay="650" data-aos-duration="700" data-aos-easing="ease-in-out" data-aos-mirror="false" data-aos-once="true">
 
                             <div class="card-header border border-bottom-0 bg-primary rounded-top-3 p-3 w-50 mx-3">
                                 <p class="text-capitalize m-0 text-center fw-bold text-white textSide">Foto Bangunan</p>

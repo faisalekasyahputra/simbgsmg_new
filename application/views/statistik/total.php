@@ -11,11 +11,11 @@
             </div>
 
 
-            <div class="row justify-content-center h-50 align-items-start">
+            <div class="row justify-content-center align-items-start">
 
-                <div class="col d-flex  justify-content-around align-items-start ">
+                <div class="col d-flex flex-column flex-md-row flex-lg-row justify-content-around align-items-center align-items-md-start align-items-lg-start ">
 
-                    <div class="row ">
+                    <div class="row  w-md-50 w-lg-50 mb-4">
                         <div class="col ">
                             <ul class="nav nav-pills d-flex flex-column " id="myTab" role="tablist">
 
@@ -28,12 +28,12 @@
 
                         </div>
                     </div>
-                    <div class="tab-content rounded-3 w-75  glass-nocolor border-top-cstm p-3" id="myTabContent">
-                        <div class="tab-pane fade show active " style="height: 500px;" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                            <canvas id="myChart1"></canvas>
+                    <div class="tab-content rounded-3 w-100 w-lg-75 w-md-75 glass-nocolor border-top-cstm p-3 mb-5" id="myTabContent">
+                        <div class="tab-pane fade show active " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <canvas class="h-100" id="myChart1"></canvas>
                         </div>
-                        <div class="tab-pane fade " id="profile-tab-pane" style="height: 500px;" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                            <canvas id="myChart2"></canvas>
+                        <div class="tab-pane fade " id="profile-tab-pane"  role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                            <canvas class="h-100" id="myChart2"></canvas>
                         </div>
 
                     </div>

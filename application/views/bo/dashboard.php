@@ -9,9 +9,9 @@
           </div>
           <div class="tab-content tab-content-basic">
             <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
-              <div class="row row-cols-md-3 g-3">
+              <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-3">
                 <div class="col">
-                  <div class="card border border-1 rounded-2">
+                  <div class="card h-100 border border-1 rounded-2">
                     <div class="card-body">
                       <p class="statistics-title d-flex justify-content-between"> <span>Jumlah Data</span><span><i class="fa fa-database me-2" aria-hidden="true"></i></span></p>
                       <hr>
@@ -20,7 +20,7 @@
                   </div>
                 </div>
                 <div class="col">
-                  <div class="card border border-1 rounded-2">
+                  <div class="card h-100 border border-1 rounded-2">
                     <div class="card-body">
                       <p class="statistics-title d-flex justify-content-between"> <span>Jumlah Hunian</span><span><i class="fa fa-building" aria-hidden="true"></i></span></p>
                       <hr>
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="col">
-                  <div class="card border border-1 rounded-2">
+                  <div class="card h-100 border border-1 rounded-2">
                     <div class="card-body">
                       <p class="statistics-title d-flex justify-content-between"> <span>Jumlah Industri</span><span><i class="fa fa-industry" aria-hidden="true"></i></span></p>
                       <hr>
@@ -41,7 +41,7 @@
 
 
                 <div class="col">
-                  <div class="card border border-1 rounded-2">
+                  <div class="card h-100 border border-1 rounded-2">
                     <div class="card-body">
                       <p class="statistics-title d-flex justify-content-between"> <span>Jumlah Usaha</span><span><i class="fa fa-shopping-basket" aria-hidden="true"></i></p>
                       <hr>
@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="col">
-                  <div class="card border border-1 rounded-2">
+                  <div class="card h-100 border border-1 rounded-2">
                     <div class="card-body">
                       <p class="statistics-title d-flex justify-content-between"> <span>Jumlah Sosial Usaha</span><span><i class="fa fa-group" aria-hidden="true"></i></span></p>
                       <hr>
@@ -62,7 +62,7 @@
 
 
                 <div class="col">
-                  <div class="card border border-1 rounded-2">
+                  <div class="card h-100 border border-1 rounded-2">
                     <div class="card-body">
                       <p class="statistics-title d-flex justify-content-between"> <span>Jumlah Cagar Budaya</span><span><i class="fa fa-diamond" aria-hidden="true"></i></span></p>
                       <hr>

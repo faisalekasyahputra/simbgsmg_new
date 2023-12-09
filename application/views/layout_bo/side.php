@@ -12,7 +12,7 @@
   }
 ?>
 <nav class=" navbar navbar-expand-lg align-items-start" >
-<div class=" sidebar collapse navbar-collapse align-items-start" id="navbarNav">
+<div class=" sidebar collapse navbar-collapse align-items-start position-absolute position-md-relative position-lg-relative mt-0 h-100" id="navbarNav">
   <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="<?=base_url('Backoffice/dashboard')?>">

@@ -43,7 +43,7 @@
     <div class="container-fluid d-flex align-items-top justify-content-center p-0 h-100" >
       <div class="card m-auto rounded-2 p-5 glass">
         <div class="row align-items-center">
-            <div class="col border-end border-1">
+            <div class="col border-end border-1 d-none d-lg-block d-md-block">
               
                 <img class="img-thumbnail border border-0 bg-transparent p-3" src="<?= base_url('assets/img/_ff47449a-cae2-4133-9c58-f795dbfa9d0a-removebg-preview1.svg') ?>" alt="" width="500px">
             </div>
