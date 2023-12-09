@@ -19,6 +19,7 @@
  <script>
      new DataTable('#example');
      new DataTable('#tabel2');
+     
  </script>
  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  <script src="<?= base_url('assets/js/grafik.js')?>"></script>

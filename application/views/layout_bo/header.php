@@ -52,7 +52,7 @@
   <script src="<?=base_url('assets/js/leaflet-src.js')?>"></script>
     <link rel="stylesheet" href="<?=base_url('assets/css/leaflet.css')?>"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.2/dist/leaflet.draw-src.css" />
-    <script src="https://unpkg.com/leaflet-draw@1.0.2/dist/leaflet.draw-src.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.2/dist/leaflet.draw-src.js"></script> 081235497016
     <script src="<?=base_url('assets/src/Leaflet.Draw.Event.js')?>"></script>
     
 

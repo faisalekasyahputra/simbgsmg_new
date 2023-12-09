@@ -8,17 +8,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
-                <ul class="navbar-nav align-items-center d-flex ">
+                <ul class="navbar-nav align-items-center d-flex navbar-nav-scroll">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="beranda" href="<?=base_url('index.php')?>">Beranda</a>
                     </li>
-                    <li class=" dropdown d-flex">
+                    <li class=" dropdown d-flex flex-column align-items-center">
                         <a class="btn nav-link d-flex align-items-center " href="#" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <p class="m-0">Profil Kepemilikan</p> <i class="fa fa-sort-down ms-2 mb-2"
                                 aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu mt-4 p-3" id="myTab" role="tablist">
+                        <ul class="dropdown-menu mt-md-4 mt-lg-4 p-3 " id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="dropdown-item nav-link" href="<?=base_url('Welcome/kepemilikan')?>">Berdasarkan Kepemilikan IMB</a>
                             </li>
@@ -30,13 +30,13 @@
                             
                         </ul>
                     </li>
-                    <li class=" dropdown d-flex">
+                    <li class=" dropdown d-flex flex-column align-items-center">
                         <a class="btn nav-link d-flex align-items-center " href="#" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <p class="m-0">Garis Sepadan</p> <i class="fa fa-sort-down ms-2 mb-2"
                                 aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu mt-4 p-3" id="myTab" role="tablist">
+                        <ul class="dropdown-menu mt-md-4 mt-lg-4 p-3" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="dropdown-item nav-link" href="<?=base_url('index.php/Welcome/tsepadan/GS_Bangunan')?>">Bangunan</a>
                             </li>
@@ -70,13 +70,13 @@
                             
                         </ul>
                     </li>
-                    <li class=" dropdown d-flex">
+                    <li class=" dropdown d-flex flex-column align-items-center">
                         <a class="btn nav-link d-flex align-items-center " href="#" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <p class="m-0">Profil Bangunan</p> <i class="fa fa-sort-down ms-2 mb-2"
                                 aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu mt-4 p-3" id="myTab" role="tablist">
+                        <ul class="dropdown-menu mt-md-4 mt-lg-4 p-3" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="dropdown-item nav-link" href="<?=base_url('index.php/Welcome/profil_bangunan/1')?>">Diatas Drainase</a>
                             </li>
@@ -116,13 +116,13 @@
                         <a class="nav-link" href="<?=base_url('index.php/Welcome/peta')?>">Peta Spasial</a>
                     </li>
                  
-                    <li class=" dropdown d-flex">
+                    <li class=" dropdown d-flex flex-column align-items-center">
                         <a class="btn nav-link d-flex align-items-center " href="<?=base_url('index.php/Welcome/stat')?>" type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             <p class="m-0">Statistik</p> <i class="fa fa-sort-down ms-2 mb-2"
                                 aria-hidden="true"></i>
                         </a>
-                        <ul class="dropdown-menu mt-4" id="myTab" role="tablist">
+                        <ul class="dropdown-menu mt-md-4 mt-lg-4 p-3" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="dropdown-item nav-link" href="<?=base_url('index.php/Welcome/stat_total')?>">Total</a>
                             </li>

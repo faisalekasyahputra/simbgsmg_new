@@ -136,3 +136,12 @@ table th , table td ,table tr , .text-table{
 .textSide{
   font-size: smaller!important;
 }
+
+@media only screen and (width: 500px) {
+  .glass-md{
+  background: rgba(255, 255, 255, 0.28)!important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+  -webkit-backdrop-filter: blur(9.2px)!important;
+  backdrop-filter: blur(9.2px)!important;
+  }
+}

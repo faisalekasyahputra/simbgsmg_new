@@ -4,8 +4,8 @@
             <div class="col text-center">
             <h1 class="h5 fw-bold mb-3"><?=$subtitle?></h1>
             </div>
-            <div class="row-cols-md-4 d-flex p-0">
-                <div class="col p-1">
+            <div class="row row-cols-md-4 row-cols-lg-4 row-cols-2 g-2">
+                <div class="col">
                     <select class="form-select slc1 p-2" name="state" aria-label="Default select example">
                         <option value="<?=$pilihan[0]?>" selected><?=$pilihan[0]?></option>
                         <option value="Semua">Semua</option>
@@ -19,7 +19,7 @@
                         <option value="Campuran">Campuran</option>
                       </select>
                 </div>
-                <div class="col p-1">
+                <div class="col ">
                     <select class="form-select slc2 p-2" name="state"  aria-label="Default select example">
                         <option value="<?=$pilihan[1]?>" selected><?=$pilihan[1]?></option>
                         <option value="Semua">Semua</option>
@@ -28,7 +28,7 @@
                        
                       </select>
                 </div>
-                <div class="col p-1 ">
+                <div class="col ">
                     <select class="form-select slc3 p-2" name="state"  aria-label="Default select example">
                     <option value="<?=$pilihan[2]?>" selected><?=$pilihan[2]?></option>
                         <option value="Semua">Semua</option>
@@ -44,7 +44,7 @@
                         <option value="10">Mata Air</option>
                       </select>
                 </div>
-                <div class="col p-1">
+                <div class="col">
                     <select class="form-select slc4 p-2" name="state"  aria-label="Default select example">
                     <option value="<?=$pilihan[3]?>" selected><?=$pilihan[3]?></option>
                         <option value="Semua">Semua</option>
@@ -162,7 +162,7 @@
           "&nbsp;&nbsp;&nbsp;&nbsp;Bangunan": bangunan,
         }
       };
-    L.control.groupedLayers(baseLayers,groupedOverlays,{collapsed:false}).addTo(map);
+    L.control.groupedLayers(baseLayers,groupedOverlays,{collapsed:true}).addTo(map);
 
     function icone(ico) {
         if (ico == 'Hunian') {

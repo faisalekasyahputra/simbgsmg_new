@@ -1,6 +1,6 @@
 <section id="section-1" class="hero-section bintang" style="background-image: url(<?= base_url('/assets/img/star.svg') ?>);">
     <div class="container-fluid py-5">
-        <div class="container" style="min-height: 100vh;">
+        
             <div class="row justify-content-center">
                 <div class="col d-flex flex-column align-items-center ">
                     <div class="row">
@@ -11,11 +11,13 @@
                             <h1 class="h5 fw-bold mb-5"><?=$title?></h1>
                         </div>
                     </div>
-
-                    <div class="row">
+                </div>
+            </div>
+            <div class="row mb-5 p-3">
                         <div class="col glass-nocolor border-top-cstm p-3 rounded-3">
-                        <table id="example" class="table table-bordered" style="width:90vw">
-                                <thead>
+                            <div class="table-responsive overflow-x-scroll">
+                                <table id="example" class="table table-striped table-sm" >
+                                <thead class="bg-light-subtle">
                                     <tr>
                                         <th style="width: 5%;">No</th>
                                         <th style="width: 25%;">Nama Pemilik</th>
@@ -39,7 +41,7 @@
                                         <td><?=$b->Fungsi?></td>
                                      
                                         <td><a class="btn btn-primary d-flex align-items-center" href="<?=base_url('Welcome/data_opd/'.$b->id )?>" target="_blank"><i class="fa fa-database me-2" aria-hidden="true"></i>
-                                                <p class="m-0"> Detail</p>
+                                                <p class="m-0 text-center"> Detail</p>
                                             </a></td>
                                     </tr>
                                     <?php           
@@ -50,17 +52,11 @@
                                 </tbody>
 
                             </table>
+                            </div>
+                        
                         </div>
                     </div>
-
-
-
-
-
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 
 </section>
