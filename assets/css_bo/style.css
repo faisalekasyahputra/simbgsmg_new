@@ -116,6 +116,42 @@
 /* === Import template variables === */
 /*-------------------------------------------------------------------*/
 /* === SCSS Compass Functions === */
+a#example_previous {
+  padding-left:10px;
+  border-radius: 5px 0 0 5px;
+}
+
+a.paginate_button {
+  background: #25185a;
+  padding:5px;
+  
+}
+a.paginate_button.current {
+  background: #f95f53;
+  padding:10px;
+  border-radius:5px;
+}
+
+span.ellipsis {
+  background: #25185a;
+  padding: 5px;
+   color:white;
+}
+
+a#example_previous {}
+
+a#example_next {
+  padding-right: 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+div#example_paginate a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @-moz-keyframes flash {
   0% {
@@ -28869,6 +28905,7 @@ div.tagsinput span.tag a {
   padding-left: 0;
   padding-right: 0;
   padding-top: 97px;
+  justify-content: space-between;
 }
 
 .page-body-wrapper.full-page-wrapper {
